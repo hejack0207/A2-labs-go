@@ -1,0 +1,62 @@
+{
+  "主体信息表": {
+    "tabname": "主体信息表",
+    "englishname": "Organization",
+    "servicename": ""
+  },
+  "产品加工过程记录表": {
+    "tabname": "产品加工过程记录表",
+    "englishname": "ProcessProduct",
+    "servicename": ""
+  },
+  "产品批次信息表": {
+    "tabname": "产品批次信息表",
+    "englishname": "ProductTrace",
+    "servicename": ""
+  },
+  "产品质检信息表": {
+    "tabname": "产品质检信息表",
+    "englishname": "QualityControl",
+    "servicename": ""
+  },
+  "内部追溯信息列表": {
+    "tabname": "内部追溯信息列表",
+    "englishname": "",
+    "servicename": ""
+  },
+  "畜产品屠宰信息记录表": {
+    "tabname": "畜产品屠宰信息记录表",
+    "englishname": "Slaughter",
+    "servicename": ""
+  },
+  "畜牧业(渔业)基地信息表": {
+    "tabname": "畜牧业(渔业)基地信息表",
+    "englishname": "RaiseLivestock",
+    "servicename": ""
+  },
+  "畜牧业（渔业）兽药使用记录表": {
+    "tabname": "畜牧业（渔业）兽药使用记录表",
+    "englishname": "VeterinaryDrug",
+    "servicename": ""
+  },
+  "畜牧业（渔业）饲料使用记录表": {
+    "tabname": "畜牧业（渔业）饲料使用记录表",
+    "englishname": "RaiseLivestockFodder",
+    "servicename": ""
+  },
+  "种植业农药使用记录表": {
+    "tabname": "种植业农药使用记录表",
+    "englishname": "PlantPresticide",
+    "servicename": ""
+  },
+  "种植业基地信息表": {
+    "tabname": "种植业基地信息表",
+    "englishname": "PlantBase",
+    "servicename": ""
+  },
+  "种植业肥料使用记录表": {
+    "tabname": "种植业肥料使用记录表",
+    "englishname": "ManureUsage",
+    "servicename": ""
+  }
+}
