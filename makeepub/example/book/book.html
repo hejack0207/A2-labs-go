@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<meta charset="utf-8" />
+	<title>示例(Example)</title>
+	<link href="style.css" type="text/css" rel="stylesheet"/>
+</head>
+<body>
+<h1>不是第一章(Not Chapter 1)</h1>
+<!--生成目录，因为ByHeader是2(Will not generate TOC here because 'ByHeader' is 2)-->
+
+<div class="makeepub-chapter" data-chapter-level="1" data-chapter-title="第一章"></div>
+<!--完全不依赖与标题节点的章节(A chapter does not depend on any 'header' tags)-->
+
+<h2>第一章第一节(Section 1 of Chapter 1)</h2>
+<!--一个普通的章节，生成目录，虽然'AtLevel'是2但不拆分文件，因为它与上级标题之间没有任何正文。(A normal chapter, will generate TOC but will not split file even 'AtLevel' is 2, because there's no content between it and its parent)-->
+<p>第一章第一节(content of section 1 of chapter 1)</p>
+<h3>测试三级标题(Test Level 3 chapter)</h3>
+<!--一个普通的章节，生成目录，因为'AtLevel'是2所以不拆分文件(A normal chapter, will generate TOC but will not split file because 'AtLevel' is 2)-->
+<h4>测试四级标题(Test Level 4 chapter)</h4>
+<!--一个普通的章节，既不生成目录也不拆分文件，因为'AtLevel'是2，‘toc’是3(A normal chapter, will neither generate TOC or split file because 'AtLevel' is 2 and 'toc' is 3)-->
+
+<h1 class="makeepub-chapter">第二章(Chapter 2)</h1>
+<!--会拆分和生成目录，因为class 'makeepub-chapter'将它转换为一个章节节点(Will split and generate TOC here because of class 'makeepub-chapter')-->
+
+<p>第二章正文的第一部分(part 1 of the chapter 2 content)</p>
+<div class="makeepub-chapter" data-chapter-level="0"></div>
+<!--'data-chapter-level'为0将在此强制拆分文件，但不会生成目录(Force split but not generate TOC because 'data-chapter-level' is 0)-->
+<p>第二章正文的第二部分(part 2 of the chapter 2 content)</p>
+
+<img class="duokan-fullscreen makeepub-chapter" src="fullscreen.png" alt="fullscreen"/>
+<!--全屏插图，同时根据后续<h1>生成目录(full screen image, and will generate TOC based on the next <h1> tag)-->
+<h1>第三章(Chapter 3)</h1>
+<h2 class="makeepub-not-chapter">不是章节(not a chapter)</h2>
+<!--不是章节，因为class 'makeepub-not-chapter'(Not a chapter because of class 'makeepub-not-chapter')-->
+<h2 data-chapter-title="(Section 1 one Chapter 3)第三章第一节">第三章第一节(Section 1 one Chapter 3)</h2>
+<!--章节标题是'data-chapter-title'属性(chapter title will be the value of attribute 'data-chapter-title')-->
+
+<div class="makeepub-chapter"></div>
+<!--会生成目录，目录级别和标题有后续标题节点决定，这里是<h2>(Will generate TOC here, chapter level and title are determined by the next 'header' tag, <h2> here)-->
+<p>这些文字会出现在章节标题前(text before chapter title)</p>
+<h2>第三章第二节(Section 2 one Chapter 3)</h2>
+<!--不会生成目录，因为已经被前面的<div>使用了(Will not generate TOC, becuase <h2> is already used by the <div> tag)-->
+</body>
+</html>
