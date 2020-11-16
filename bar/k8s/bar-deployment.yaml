@@ -1,0 +1,43 @@
+---
+kind: Deployment
+apiVersion: apps/v1
+metadata:
+  namespace: foo
+  name: deployment-bar
+spec:
+  selector:
+    matchLabels:
+      app: pod-bar
+  strategy:
+    rollingUpdate:
+      maxSurge: 1
+      maxUnavailable: 1
+    type: RollingUpdate
+  template:
+    metadata:
+      labels:
+        app: pod-bar
+    spec:
+      containers:
+        - image: dev:31320/bar:0.0.1
+          securityContext:
+            privileged: true
+          imagePullPolicy: IfNotPresent
+          name: container-bar
+          ports:
+            - protocol: TCP
+              containerPort: 8080
+          lifecycle:
+            postStart:
+              exec:
+                command:
+                  - /bin/bash
+                  - -c
+                  - >-
+                    echo poststart...
+            preStop:
+              exec:
+                command: ["/bin/sh","-c","echo prestop..."]
+
+      dnsPolicy: ClusterFirst
+      restartPolicy: Always

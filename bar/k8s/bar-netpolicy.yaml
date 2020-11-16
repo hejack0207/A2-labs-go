@@ -1,0 +1,15 @@
+---
+apiVersion: networking.k8s.io/v1
+kind: NetworkPolicy
+metadata:
+  namespace: foo
+  name: netpolicy-bar
+spec:
+  namespaceSelector:
+    matchLabels:
+      app: bar
+  egress:
+    -to:
+      - namespaceSelector
+          matchLabels:
+            app: XXXYYYY
