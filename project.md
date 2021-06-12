@@ -2,6 +2,7 @@
 * [k8s](https://github.com/kubernetes/kubernetes)
 
 # infra
+* [etcd](https://github.com/etcd-io/etcd)
 * [tidb](https://github.com/pingcap/tidb)
 
 # container tools
