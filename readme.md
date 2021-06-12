@@ -5,6 +5,9 @@
 # tools
 * [cinf](https://github.com/mhausenblas/cinf)
 
+# doc
+* [golang-website](https://github.com/golang/website)
+
 # awesome
 * [awesome-go](https://github.com/avelino/awesome-go)
 * [awesome-go-cn](https://github.com/hackstoic/golang-open-source-projects)
