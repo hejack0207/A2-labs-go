@@ -1,6 +1,6 @@
 # container tools
 * [plugins](https://github.com/containernetworking/plugins)
-* [lctn](https://github.com/chenchun/ltcn)
+* [lctn](https://github.com/chenchun/lctn)
 * [ipset](https://github.com/chenchun/ipset)
 * [cgroupfs](https://github.com/chenchun/cgroupfs)
 * [cinf](https://github.com/mhausenblas/cinf)
