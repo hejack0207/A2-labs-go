@@ -6,7 +6,8 @@
 # tools
 * [cinf](https://github.com/mhausenblas/cinf)
 
-# doc
+# language
+* [go](https://github.com/golang/go)
 * [golang-website](https://github.com/golang/website)
 
 # awesome
