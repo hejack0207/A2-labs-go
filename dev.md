@@ -2,6 +2,13 @@
 * [go](https://github.com/golang/go)
 * [golang-website](https://github.com/golang/website)
 
+# repl
+* [gore](https://github.com/motemen/gore)
+
+# script
+* [mage:go](https://github.com/magefile/mage)
+* [awesome-mage](https://github.com/magefile/awesome-mage)
+
 # code tools
 * [astpath](https://github.com/nick-jones/astpath)
 * [go-dependency-graph](https://github.com/tanmoyopenroot/go-dependency-graph)
@@ -9,9 +16,6 @@
 * [go-callvis](https://github.com/ofabry/go-callvis)
 * [golang-tools](https://github.com/golang/tools)
 * [xo](https://github.com/hejack0207/xo)
-
-# repl
-* [gore](https://github.com/motemen/gore)
 
 # runtime
 * [gcvis](https://github.com/davecheney/gcvis)
