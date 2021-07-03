@@ -10,6 +10,9 @@
 * [golang-tools](https://github.com/golang/tools)
 * [xo](https://github.com/hejack0207/xo)
 
+# repl
+* [gore](https://github.com/motemen/gore)
+
 # runtime
 * [gcvis](https://github.com/davecheney/gcvis)
 * [go-gcbench](https://github.com/aclements/go-gcbench)
