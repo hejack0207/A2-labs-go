@@ -3,6 +3,7 @@
 * [golang-website](https://github.com/golang/website)
 
 # repl
+* [gomacro](https://github.com/cosmos72/gomacro)
 * [gore](https://github.com/motemen/gore)
 
 # script
