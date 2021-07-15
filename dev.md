@@ -7,7 +7,7 @@
 * [gore](https://github.com/motemen/gore)
 
 # script
-* [mage:go](https://github.com/magefile/mage)
+* [mage](https://github.com/magefile/mage)
 * [awesome-mage](https://github.com/magefile/awesome-mage)
 
 # code tools

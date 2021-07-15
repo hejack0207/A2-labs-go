@@ -12,6 +12,10 @@
 * [go](https://github.com/golang/go)
 * [golang-website](https://github.com/golang/website)
 
+# dev
+* [gomacro](https://github.com/cosmos72/gomacro)
+* [mage](https://github.com/magefile/mage)
+
 # awesome
 * [awesome-go](https://github.com/avelino/awesome-go)
 * [awesome-go-cn](https://github.com/hackstoic/golang-open-source-projects)
