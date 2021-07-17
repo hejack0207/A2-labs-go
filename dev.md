@@ -10,6 +10,9 @@
 * [mage](https://github.com/magefile/mage)
 * [awesome-mage](https://github.com/magefile/awesome-mage)
 
+# debugger
+* [delve](https://github.com/go-delve/delve)
+
 # code tools
 * [astpath](https://github.com/nick-jones/astpath)
 * [go-dependency-graph](https://github.com/tanmoyopenroot/go-dependency-graph)
