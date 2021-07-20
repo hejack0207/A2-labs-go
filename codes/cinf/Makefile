@@ -6,6 +6,9 @@ export GO111MODULE=on
 bin:
 	go build -o bin/cinf github.com/mhausenblas/cinf
 
+debug:
+	go build -o bin/cinf -gcflags="all=-N -l" github.com/mhausenblas/cinf
+
 .PHONY: release
 release:
 	curl -sL https://git.io/goreleaser | bash -s -- --rm-dist --config .goreleaser.yml
