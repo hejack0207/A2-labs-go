@@ -13,6 +13,10 @@
 # debugger
 * [delve](https://github.com/go-delve/delve)
 
+# editor
+* [vim-go](https://github.com/fatih/vim-go)
+* [vim-delve](https://github.com/sebdah/vim-delve)
+
 # code tools
 * [astpath](https://github.com/nick-jones/astpath)
 * [go-dependency-graph](https://github.com/tanmoyopenroot/go-dependency-graph)
