@@ -7,7 +7,7 @@ bin:
 	go build -o bin/cinf github.com/mhausenblas/cinf
 
 debug:
-	go build -o bin/cinf -gcflags="all=-N -l" github.com/mhausenblas/cinf
+	go build -o bin/cinfx -gcflags="all=-N -l" github.com/mhausenblas/cinf
 
 .PHONY: release
 release:
