@@ -17,6 +17,7 @@
 
 # script
 * [mage](https://github.com/magefile/mage)
+* [gorun](https://github.com/erning/gorun)
 * [awesome-mage](https://github.com/magefile/awesome-mage)
 
 # debugger
