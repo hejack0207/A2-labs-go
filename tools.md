@@ -17,6 +17,7 @@
 * [gh-prompt](https://github.com/c-bata/gh-prompt)
 * [kube-prompt](https://github.com/c-bata/kube-prompt)
 * [moshpit](https://github.com/CrushedPixel/moshpit)
+* [asm-cli](https://github.com/cch123/asm-cli)
 
 # doc tools
 * [hugo](https://github.com/gohugoio/hugo)
