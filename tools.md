@@ -13,7 +13,12 @@
 * [packer](https://github.com/hashicorp/packer)
 * [packer-builder-qemu-chroot](https://github.com/summerwind/packer-builder-qemu-chroot)
 
-# tools
+# shell tools
+* [gh-prompt](https://github.com/c-bata/gh-prompt)
+* [kube-prompt](https://github.com/c-bata/kube-prompt)
+* [moshpit](https://github.com/CrushedPixel/moshpit)
+
+# doc tools
 * [hugo](https://github.com/gohugoio/hugo)
 * [hugodocs](https://github.com/gohugoio/hugoDocs)
 
