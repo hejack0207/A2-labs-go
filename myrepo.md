@@ -1,6 +1,7 @@
 # projects
 
 # dev
+* [go-dependency-graph](https://github.com/hejack0207/go-dependency-graph)
 * [xo](https://github.com/hejack0207/xo)
 
 # tools
