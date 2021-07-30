@@ -1,3 +1,6 @@
+# data tools
+* [usql](https://github.com/xo/usql)
+
 # container tools
 * [plugins](https://github.com/containernetworking/plugins)
 * [lctn](https://github.com/chenchun/lctn)

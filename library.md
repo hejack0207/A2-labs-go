@@ -1,8 +1,7 @@
-# web
-* [gin](https://github.com/gin-gonic/gin)
-
-# cli
+# basic
 * [cobra](https://github.com/spf13/cobra)
+* [tview](https://github.com/rivo/tview)
+* [go-prompt](https://github.com/c-bata/go-prompt)
 
 # parser
 * [sql-parser](https://github.com/pingcap/parser)
@@ -18,3 +17,7 @@
 
 # kernel
 * [netlink](https://github.com/vishvananda/netlink)
+
+# web
+* [gin](https://github.com/gin-gonic/gin)
+
