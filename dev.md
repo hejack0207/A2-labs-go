@@ -3,6 +3,14 @@
 * [golang-website](https://github.com/golang/website)
 * [goenv](https://github.com/syndbg/goenv)
 
+# runtime
+* [gops](https://github.com/google/gops)
+* [gcvis](https://github.com/davecheney/gcvis)
+* [go-gcbench](https://github.com/aclements/go-gcbench)
+* [pyroscope](https://github.com/pyroscope-io/pyroscope)
+* [pyroscope.github.io](https://github.com/pyroscope-io/pyroscope.github.io)
+* [pyroscope-helm](https://github.com/pyroscope-io/helm-chart)
+
 # repl
 * [gomacro](https://github.com/cosmos72/gomacro)
 * [gore](https://github.com/motemen/gore)
@@ -25,13 +33,7 @@
 * [go-callvis](https://github.com/ofabry/go-callvis)
 * [golang-tools](https://github.com/golang/tools)
 * [xo](https://github.com/hejack0207/xo)
-
-# runtime
-* [gcvis](https://github.com/davecheney/gcvis)
-* [go-gcbench](https://github.com/aclements/go-gcbench)
-* [pyroscope](https://github.com/pyroscope-io/pyroscope)
-* [pyroscope.github.io](https://github.com/pyroscope-io/pyroscope.github.io)
-* [pyroscope-helm](https://github.com/pyroscope-io/helm-chart)
+* [godocdown](https://github.com/robertkrimen/godocdown)
 
 # awesome
 * [awesome-go](https://github.com/avelino/awesome-go)
