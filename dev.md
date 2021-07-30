@@ -1,6 +1,7 @@
 # language support
 * [go](https://github.com/golang/go)
 * [golang-website](https://github.com/golang/website)
+* [goenv](https://github.com/syndbg/goenv)
 
 # repl
 * [gomacro](https://github.com/cosmos72/gomacro)
