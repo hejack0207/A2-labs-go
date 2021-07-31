@@ -15,6 +15,7 @@
 # dev
 * [gomacro](https://github.com/cosmos72/gomacro)
 * [mage](https://github.com/magefile/mage)
+* [gorun](https://github.com/erning/gorun)
 * [delve](https://github.com/go-delve/delve)
 * [vim-go](https://github.com/fatih/vim-go)
 
