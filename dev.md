@@ -22,6 +22,7 @@
 
 # debugger
 * [delve](https://github.com/go-delve/delve)
+* [go-pry](https://github.com/d4l3k/go-pry)
 
 # editor
 * [vim-go](https://github.com/fatih/vim-go)
