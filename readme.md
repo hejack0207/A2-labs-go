@@ -5,6 +5,7 @@
 * [cilium](https://github.com/cilium/cilium)
 
 # tools
+* [kubectl-trace](https://github.com/iovisor/kubectl-trace)
 * [lctn](https://github.com/chenchun/lctn)
 * [cinf](https://github.com/mhausenblas/cinf)
 
