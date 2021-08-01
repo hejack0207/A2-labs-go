@@ -1,3 +1,9 @@
+# network
+* [skydive](https://github.com/skydive-project/skydive) wui
+
+# tui
+* [termshark](https://github.com/gcla/termshark)
+
 # data tools
 * [usql](https://github.com/xo/usql)
 
