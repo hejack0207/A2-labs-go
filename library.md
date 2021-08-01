@@ -1,5 +1,6 @@
 # basic
 * [cobra](https://github.com/spf13/cobra)
+* [cli](https://github.com/urfave/cli)
 * [tview](https://github.com/rivo/tview)
 * [go-prompt](https://github.com/c-bata/go-prompt)
 
