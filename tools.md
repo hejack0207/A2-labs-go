@@ -1,42 +1,42 @@
 # file
-* [jiq:go](https://github.com/fiatjaf/jiq)
-* [jid:go](https://github.com/simeji/jid)
-* [xpipe:go](https://github.com/Imika/xpipe)
-* [usql:go](https://github.com/xo/usql)
-* [sift:go](https://github.com/svent/sift)
-* [fzf:go](https://github.com/junegunn/fzf)
-* [slit:go](https://github.com/tigrawap/slit)
+* [jiq](https://github.com/fiatjaf/jiq)
+* [jid](https://github.com/simeji/jid)
+* [xpipe](https://github.com/Imika/xpipe)
+* [usql](https://github.com/xo/usql)
+* [sift](https://github.com/svent/sift)
+* [fzf](https://github.com/junegunn/fzf)
+* [slit](https://github.com/tigrawap/slit)
 
 # system
-* [up:go](https://github.com/akavel/up)
+* [up](https://github.com/akavel/up)
 
 # system virt
-* [dockermachine:go](https://github.com/docker/machine)
-* [docker-machine-kvm:go](https://github.com/machine-drivers/docker-machine-kvm)dhiltgen/docker-machine-kvm
-* [runq:go](https://github.com/gotoz/runq)
-* [buildah:go](https://github.com/containers/buildah)
-* [log-pilot:go](https://github.com/AliyunContainerService/log-pilot)
-* [nerdctl:go](https://github.com/containerd/nerdctl)
-* [dive:go](https://github.com/wagoodman/dive)
-* [ksniff:go](https://github.com/eldadru/ksniff)
-* [kubevirt:go](https://github.com/kubevirt/kubevirt)
+* [dockermachine](https://github.com/docker/machine)
+* [docker-machine-kvm](https://github.com/machine-drivers/docker-machine-kvm)dhiltgen/docker-machine-kvm
+* [runq](https://github.com/gotoz/runq)
+* [buildah](https://github.com/containers/buildah)
+* [log-pilot](https://github.com/AliyunContainerService/log-pilot)
+* [nerdctl](https://github.com/containerd/nerdctl)
+* [dive](https://github.com/wagoodman/dive)
+* [ksniff](https://github.com/eldadru/ksniff)
+* [kubevirt](https://github.com/kubevirt/kubevirt)
 * [packer](https://github.com/hashicorp/packer)
 * [packer-builder-qemu-chroot](https://github.com/summerwind/packer-builder-qemu-chroot)
 
 # network
 * [tcpterm](https://github.com/sachaos/tcpterm)
 * [skydive](https://github.com/skydive-project/skydive) wui
-* [httpparse:go](https://github.com/clearthesky/httpparse)
-* [termshark:go](https://github.com/gcla/termshark)
-* [tcpterm:go](https://github.com/sachaos/tcpterm)
-* [iptables-tracer:go](https://github.com/x-way/iptables-tracer)
-* [dnsproxy:go](https://github.com/AdguardTeam/dnsproxy)
-* [netgo:go](https://github.com/grt1st/netgo)
-* [hyperfox:go](https://github.com/malfunkt/hyperfox)
+* [httpparse](https://github.com/clearthesky/httpparse)
+* [termshark](https://github.com/gcla/termshark)
+* [tcpterm](https://github.com/sachaos/tcpterm)
+* [iptables-tracer](https://github.com/x-way/iptables-tracer)
+* [dnsproxy](https://github.com/AdguardTeam/dnsproxy)
+* [netgo](https://github.com/grt1st/netgo)
+* [hyperfox](https://github.com/malfunkt/hyperfox)
 
 # tui
 * [termshark](https://github.com/gcla/termshark)
-* [wechatcmd:go](https://github.com/liushuchun/wechatcmd)
+* [wechatcmd](https://github.com/liushuchun/wechatcmd)
 
 # data tools
 * [usql](https://github.com/xo/usql)
@@ -60,5 +60,10 @@
 * [hugodocs](https://github.com/gohugoio/hugoDocs)
 
 # app
-* [wechatcmd:go](https://github.com/liushuchun/wechatcmd)
+* [wechatcmd](https://github.com/liushuchun/wechatcmd)
 
+# myrepo
+* [xpipe](https://github.com/hejack0207/xpipe)
+* [shadowsocks-go](https://github.com/hejack0207/shadowsocks-go)
+* [netgo](https://github.com/hejack0207/netgo)
+* [sele-colorize](https://github.com/hejack0207/sele-colorize)

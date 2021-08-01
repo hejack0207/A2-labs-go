@@ -43,3 +43,7 @@
 # awesome
 * [awesome-go](https://github.com/avelino/awesome-go)
 * [awesome-go-cn](https://github.com/hackstoic/golang-open-source-projects)
+
+# myrepo
+* [go-dependency-graph](https://github.com/hejack0207/go-dependency-graph)
+* [xo](https://github.com/hejack0207/xo)
