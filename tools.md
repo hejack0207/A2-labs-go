@@ -27,7 +27,6 @@
 * [skydive](https://github.com/skydive-project/skydive) wui
 * [httpparse](https://github.com/clearthesky/httpparse)
 * [termshark](https://github.com/gcla/termshark)
-* [tcpterm](https://github.com/sachaos/tcpterm)
 * [iptables-tracer](https://github.com/x-way/iptables-tracer)
 * [dnsproxy](https://github.com/AdguardTeam/dnsproxy)
 * [netgo](https://github.com/grt1st/netgo)
