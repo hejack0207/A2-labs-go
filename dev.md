@@ -37,6 +37,8 @@
 * [xo](https://github.com/hejack0207/xo)
 * [godocdown](https://github.com/robertkrimen/godocdown)
 * [go-search](https://github.com/tj/go-search)
+* [hub:go](https://github.com/github/hub)
+* [gh:go](https://github.com/owenthereal/gh)
 
 # awesome
 * [awesome-go](https://github.com/avelino/awesome-go)
