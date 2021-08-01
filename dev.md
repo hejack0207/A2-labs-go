@@ -34,7 +34,6 @@
 * [coca](https://github.com/phodal/coca)
 * [go-callvis](https://github.com/ofabry/go-callvis)
 * [golang-tools](https://github.com/golang/tools)
-* [xo](https://github.com/hejack0207/xo)
 * [godocdown](https://github.com/robertkrimen/godocdown)
 * [go-search](https://github.com/tj/go-search)
 * [hub:go](https://github.com/github/hub)
