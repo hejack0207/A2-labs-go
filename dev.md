@@ -36,6 +36,7 @@
 * [golang-tools](https://github.com/golang/tools)
 * [xo](https://github.com/hejack0207/xo)
 * [godocdown](https://github.com/robertkrimen/godocdown)
+* [go-search](https://github.com/tj/go-search)
 
 # awesome
 * [awesome-go](https://github.com/avelino/awesome-go)
