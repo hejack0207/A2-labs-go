@@ -34,10 +34,13 @@
 * [coca](https://github.com/phodal/coca)
 * [go-callvis](https://github.com/ofabry/go-callvis)
 * [golang-tools](https://github.com/golang/tools)
-* [godocdown](https://github.com/robertkrimen/godocdown)
-* [go-search](https://github.com/tj/go-search)
 * [hub](https://github.com/github/hub)
 * [gh](https://github.com/owenthereal/gh)
+
+# doc tool
+* [godocdown](https://github.com/robertkrimen/godocdown)
+* [mango-doc](https://github.com/whyrusleeping/mango-doc)
+* [go-search](https://github.com/tj/go-search)
 
 # awesome
 * [awesome-go](https://github.com/avelino/awesome-go)

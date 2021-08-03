@@ -58,6 +58,8 @@
 
 # app
 * [wechatcmd](https://github.com/liushuchun/wechatcmd)
+* [wtf](https://github.com/wtfutil/wtf)
+* [wtfdocs](https://github.com/wtfutil/wtfdocs)
 
 # myrepo
 * [xpipe](https://github.com/hejack0207/xpipe)
