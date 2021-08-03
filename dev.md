@@ -14,6 +14,7 @@
 # repl
 * [gomacro](https://github.com/cosmos72/gomacro)
 * [gore](https://github.com/motemen/gore)
+* [lgo](https://github.com/yunabe/lgo)
 
 # script
 * [mage](https://github.com/magefile/mage)
@@ -23,6 +24,10 @@
 # debugger
 * [delve](https://github.com/go-delve/delve)
 * [go-pry](https://github.com/d4l3k/go-pry)
+
+# trace
+* [salp](https://github.com/mmcshane/salp)
+* [stacktrace](https://github.com/palantir/stacktrace)
 
 # editor
 * [vim-go](https://github.com/fatih/vim-go)
@@ -38,6 +43,7 @@
 * [gh](https://github.com/owenthereal/gh)
 
 # doc tool
+* [godoc2puml](https://github.com/t-yuki/godoc2puml)
 * [godocdown](https://github.com/robertkrimen/godocdown)
 * [mango-doc](https://github.com/whyrusleeping/mango-doc)
 * [go-search](https://github.com/tj/go-search)
