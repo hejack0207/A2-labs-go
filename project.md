@@ -47,11 +47,3 @@
 * [oamctl](https://github.com/oam-dev/oamctl)
 * [oam-spec](https://github.com/oam-dev/spec)
 * [kubevela](https://github.com/oam-dev/kubevela)
-
-# consensus
-* [etcd](https://github.com/etcd-io/etcd)
-* [etcd-website](https://github.com/etcd-io/website)
-
-# db
-* [tidb](https://github.com/pingcap/tidb)
-
