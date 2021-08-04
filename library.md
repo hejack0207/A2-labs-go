@@ -22,6 +22,3 @@
 
 # web
 * [gin](https://github.com/gin-gonic/gin)
-
-# pcap
-* [pcap](https://github.com/0intro/pcap)
