@@ -12,6 +12,7 @@
 
 # auto
 * [gexpect](https://github.com/ThomasRooney/gexpect)
+* [gexpect](https://github.com/shavac/gexpect)
 
 # app
 * [wechat](https://github.com/silenceper/wechat)
