@@ -39,8 +39,6 @@
 * [coca](https://github.com/phodal/coca)
 * [go-callvis](https://github.com/ofabry/go-callvis)
 * [golang-tools](https://github.com/golang/tools)
-* [hub](https://github.com/github/hub)
-* [gh](https://github.com/owenthereal/gh)
 
 # doc tool
 * [godoc2puml](https://github.com/t-yuki/godoc2puml)

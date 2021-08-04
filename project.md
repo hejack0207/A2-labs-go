@@ -20,6 +20,7 @@
 
 # k8s related
 * [istio](https://github.com/istio/istio)
+* [kube-prompt](https://github.com/c-bata/kube-prompt)
 
 # k8s operator
 * [keepalived-operator](https://github.com/redhat-cop/keepalived-operator)

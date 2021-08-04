@@ -6,7 +6,7 @@
 * [fzf](https://github.com/junegunn/fzf)
 * [slit](https://github.com/tigrawap/slit)
 
-# system
+# pipe
 * [up](https://github.com/akavel/up)
 
 # system virt
@@ -46,10 +46,10 @@
 * [cinf](https://github.com/mhausenblas/cinf)
 * [checkpointctl](https://github.com/checkpoint-restore/checkpointctl)
 
-# shell tools
+# version control
+* [hub](https://github.com/github/hub)
+* [gh](https://github.com/owenthereal/gh)
 * [gh-prompt](https://github.com/c-bata/gh-prompt)
-* [kube-prompt](https://github.com/c-bata/kube-prompt)
-* [asm-cli](https://github.com/cch123/asm-cli)
 
 # doc tools
 * [hugo](https://github.com/gohugoio/hugo)
