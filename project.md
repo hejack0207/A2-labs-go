@@ -47,7 +47,9 @@
 * [oam-spec](https://github.com/oam-dev/spec)
 * [kubevela](https://github.com/oam-dev/kubevela)
 
-# infra
+# consensus
 * [etcd](https://github.com/etcd-io/etcd)
+
+# db
 * [tidb](https://github.com/pingcap/tidb)
 
