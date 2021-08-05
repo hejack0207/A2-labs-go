@@ -50,6 +50,7 @@
 * [hub](https://github.com/github/hub)
 * [gh](https://github.com/owenthereal/gh)
 * [gh-prompt](https://github.com/c-bata/gh-prompt)
+* [lazygit](https://github.com/jesseduffield/lazygit)
 
 # doc tools
 * [hugo](https://github.com/gohugoio/hugo)
