@@ -37,6 +37,7 @@
 * [docker-ovs-plugin](https://github.com/gopher-net/docker-ovs-plugin)
 * [docker-volume-sshfs](https://github.com/vieux/docker-volume-sshfs)
 * [docker-volumes-nfs](https://github.com/SvenDowideit/docker-volumes-nfs)
+* [docker-volume-nfs](https://github.com/yzlin/docker-volume-nfs)
 * [docker-calico-plugin](https://github.com/projectcalico/libnetwork-plugin)
 
 # oam
