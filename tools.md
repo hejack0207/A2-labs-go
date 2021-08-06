@@ -6,7 +6,7 @@
 * [fzf](https://github.com/junegunn/fzf)
 * [slit](https://github.com/tigrawap/slit)
 
-# pipe
+# shell pipe
 * [up](https://github.com/akavel/up)
 
 # system virt
