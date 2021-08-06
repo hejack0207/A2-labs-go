@@ -12,6 +12,7 @@
 * [fsprobe](https://github.com/Gui774ume/fsprobe)
 * [flowlat](https://github.com/markpash/flowlat)
 * [uprobe-http-tracer](https://github.com/sematext/uprobe-http-tracer)
+* [tcptracer-bpf](https://github.com/weaveworks/tcptracer-bpf)
 
 # xdp
 * [oxdpus](https://github.com/sematext/oxdpus)
