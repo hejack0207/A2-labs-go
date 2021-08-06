@@ -1,8 +1,4 @@
-# kernel
-* [gobpf](https://github.com/iovisor/gobpf)
-* [ebpf](https://github.com/cilium/ebpf)
-
-# project
+# k8s
 * [k8s](https://github.com/kubernetes/kubernetes)
 * [tke](https://github.com/tkestack/tke)
 * [containerd](https://github.com/containerd/containerd)
