@@ -8,7 +8,7 @@
 * [conntracct](https://github.com/ti-mo/conntracct)
 * [louis](https://github.com/sourque/louis)
 * [socket-connect-bpf](https://github.com/p-/socket-connect-bpf)
-* [dockersnoop](https://github.com/stwind/docker-snoop)
+* [dockersnoop](https://github.com/stwind/dockersnoop)
 * [fsprobe](https://github.com/Gui774ume/fsprobe)
 * [flowlat](https://github.com/markpash/flowlat)
 * [uprobe-http-tracer](https://github.com/sematext/uprobe-http-tracer)
