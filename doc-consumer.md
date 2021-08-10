@@ -9,6 +9,11 @@
 * [html2md](https://github.com/suntong/html2md)
 * [html-to-markdown](https://github.com/JohannesKaufmann/html-to-markdown)
 
+# latex
+* [epublatex](https://github.com/seehuhn/epublatex)
+* [latex2epub](https://github.com/jmiszczak/latex2epub)
+* [latex2epub](https://github.com/kmuto/latex2epub)
+
 # docbook
 * [docscii](https://github.com/clayts/docscii)
 
