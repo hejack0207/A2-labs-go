@@ -9,6 +9,9 @@
 * [epub](https://github.com/kapmahc/epub)
 * [dotgraph](https://github.com/windler/dotgraph)
 
+# data format
+* [yaml](https://github.com/go-yaml/yaml)
+
 # parser
 * [sql-parser](https://github.com/pingcap/parser)
 
