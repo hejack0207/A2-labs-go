@@ -4,6 +4,9 @@
 * [tview](https://github.com/rivo/tview)
 * [go-prompt](https://github.com/c-bata/go-prompt)
 
+# doc process
+* [epub](https://github.com/kapmahc/epub)
+
 # parser
 * [sql-parser](https://github.com/pingcap/parser)
 
