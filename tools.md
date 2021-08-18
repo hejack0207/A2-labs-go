@@ -51,6 +51,8 @@
 * [gh](https://github.com/owenthereal/gh)
 * [gh-prompt](https://github.com/c-bata/gh-prompt)
 * [lazygit](https://github.com/jesseduffield/lazygit)
+* [fetch](https://github.com/gruntwork-io/fetch)
+* [git-hound](https://github.com/ezekg/git-hound)
 
 # doc tools
 * [hugo](https://github.com/gohugoio/hugo)

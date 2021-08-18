@@ -1,8 +1,16 @@
 # basic
 * [cobra](https://github.com/spf13/cobra)
+* [pflag](https://github.com/ogier/pflag)
 * [cli](https://github.com/urfave/cli)
 * [tview](https://github.com/rivo/tview)
 * [go-prompt](https://github.com/c-bata/go-prompt)
+
+# doc process
+* [epub](https://github.com/kapmahc/epub)
+* [dotgraph](https://github.com/windler/dotgraph)
+
+# data format
+* [yaml](https://github.com/go-yaml/yaml)
 
 # parser
 * [sql-parser](https://github.com/pingcap/parser)
