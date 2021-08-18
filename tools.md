@@ -35,7 +35,7 @@
 # tui
 * [wechatcmd](https://github.com/liushuchun/wechatcmd)
 
-# data tools
+# db tools
 * [usql](https://github.com/xo/usql)
 
 # container tools
