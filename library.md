@@ -15,6 +15,9 @@
 # parser
 * [sql-parser](https://github.com/pingcap/parser)
 
+# db
+* [gorp](https://github.com/go-gorp/gorp)
+
 # cv
 * [gocv](https://github.com/hybridgroup/gocv)
 
