@@ -46,6 +46,10 @@
 * [mango-doc](https://github.com/whyrusleeping/mango-doc)
 * [go-search](https://github.com/tj/go-search)
 
+# db migration
+* [migu](https://github.com/naoina/migu)
+* [dbsql2go](https://github.com/mohae/dbsql2gol)
+
 # awesome
 * [awesome-go](https://github.com/avelino/awesome-go)
 * [awesome-go-cn](https://github.com/hackstoic/golang-open-source-projects)

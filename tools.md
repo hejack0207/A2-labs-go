@@ -35,8 +35,20 @@
 # tui
 * [wechatcmd](https://github.com/liushuchun/wechatcmd)
 
-# db tools
+# db client
 * [usql](https://github.com/xo/usql)
+
+# db schema
+* [db2jsonschema](https://github.com/tgallant/db2jsonschema)
+* [DBbook](https://github.com/istepheny/DBbook)
+* [dbdiff](https://github.com/jaksal/dbdiff)
+
+## mysql
+* [carpenter](https://github.com/dev-cloverlab/carpenter)
+
+## postgres
+* [dbdot](https://github.com/akarki15/dbdot)
+* [DbSchemaRel](https://github.com/kazu22002/DbSchemaRel)
 
 # container tools
 * [plugins](https://github.com/containernetworking/plugins)
