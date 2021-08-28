@@ -6,7 +6,18 @@
 * [go-prompt](https://github.com/c-bata/go-prompt)
 
 # doc process
+## pdf
+* [pdfcpu](https://github.com/pdfcpu/pdfcpu)
+* [unipdf](https://github.com/unidoc/unipdf)
+* [pdf](https://github.com/rsc/pdf)
+
+## latex
+* [latex](https://github.com/go-latex/latex)
+
+## epub
 * [epub](https://github.com/kapmahc/epub)
+
+## dot
 * [dotgraph](https://github.com/windler/dotgraph)
 
 # data format
