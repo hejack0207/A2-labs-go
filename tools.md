@@ -41,7 +41,7 @@
 # db schema
 * [db2jsonschema](https://github.com/tgallant/db2jsonschema)
 * [DBbook](https://github.com/istepheny/DBbook)
-* [dbdiff](https://github.com/jaksal/dbdiff)
+* [dbdiff](https://github.com/knight76/dbdiff)
 
 ## mysql
 * [carpenter](https://github.com/dev-cloverlab/carpenter)
