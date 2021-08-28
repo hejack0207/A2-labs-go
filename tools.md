@@ -40,7 +40,6 @@
 
 # db schema
 * [db2jsonschema](https://github.com/tgallant/db2jsonschema)
-* [DBbook](https://github.com/istepheny/DBbook)
 * [dbdiff](https://github.com/knight76/dbdiff)
 
 ## mysql
