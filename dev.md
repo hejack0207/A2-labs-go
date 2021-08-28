@@ -48,7 +48,7 @@
 
 # db migration
 * [migu](https://github.com/naoina/migu)
-* [dbsql2go](https://github.com/mohae/dbsql2gol)
+* [dbsql2go](https://github.com/mohae/dbsql2go)
 
 # awesome
 * [awesome-go](https://github.com/avelino/awesome-go)
