@@ -3,7 +3,7 @@
 * [xo](https://github.com/hejack0207/xo)
 
 # tools
-* [ssh-web-console](https://github.com/hejack0207/ssh-web-console)wui
+* [ssh-web-console](https://github.com/hejack0207/ssh-web-console) wui
 * [xpipe](https://github.com/hejack0207/xpipe)
 * [shadowsocks-go](https://github.com/hejack0207/shadowsocks-go)
 * [netgo](https://github.com/hejack0207/netgo)
