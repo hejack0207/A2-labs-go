@@ -68,6 +68,7 @@
 # doc tools
 * [hugo](https://github.com/gohugoio/hugo)
 * [hugodocs](https://github.com/gohugoio/hugoDocs)
+* [unipdf-cli](https://github.com/unidoc/unipdf-cli)
 
 # online tools
 * [cloudpan189-go](https://github.com/tickstep/cloudpan189-go)
