@@ -36,6 +36,7 @@
 # code tools
 * [astpath](https://github.com/nick-jones/astpath)
 * [go-dependency-graph](https://github.com/tanmoyopenroot/go-dependency-graph)
+* [modgv](https://github.com/lucasepe/modgv)
 * [coca](https://github.com/phodal/coca)
 * [go-callvis](https://github.com/ofabry/go-callvis)
 * [golang-tools](https://github.com/golang/tools)
