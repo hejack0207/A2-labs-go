@@ -2,6 +2,9 @@
 * [epubtool](https://github.com/pgaskin/epubtool)
 * [goreader](https://github.com/taylorskalyo/goreader)
 
+# pdf
+* [unipdf-cli](https://github.com/unidoc/unipdf-cli)
+
 # html
 * [html2md-lunny](https://github.com/lunny/html2md)
 * [godown](https://github.com/mattn/godown)
