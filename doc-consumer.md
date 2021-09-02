@@ -1,9 +1,15 @@
 # epub
 * [epubtool](https://github.com/pgaskin/epubtool)
 * [goreader](https://github.com/taylorskalyo/goreader)
+---
+* [epub](https://github.com/kapmahc/epub)
 
 # pdf
 * [unipdf-cli](https://github.com/unidoc/unipdf-cli)
+---
+* [pdfcpu](https://github.com/pdfcpu/pdfcpu)
+* [unipdf](https://github.com/unidoc/unipdf)
+* [pdf](https://github.com/rsc/pdf)
 
 # html
 * [html2md-lunny](https://github.com/lunny/html2md)
@@ -16,9 +22,13 @@
 * [epublatex](https://github.com/seehuhn/epublatex)
 * [latex2epub](https://github.com/jmiszczak/latex2epub)
 * [latex2epub](https://github.com/kmuto/latex2epub)
+---
+* [latex](https://github.com/go-latex/latex)
 
 # docbook
 * [docscii](https://github.com/clayts/docscii)
 
 # dotgraph
 * [filterdot](https://github.com/seamia/filterdot)
+---
+* [dotgraph](https://github.com/windler/dotgraph)
