@@ -20,8 +20,6 @@
 
 # latex
 * [epublatex](https://github.com/seehuhn/epublatex)
-* [latex2epub](https://github.com/jmiszczak/latex2epub)
-* [latex2epub](https://github.com/kmuto/latex2epub)
 ---
 * [latex](https://github.com/go-latex/latex)
 
