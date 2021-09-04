@@ -10,6 +10,7 @@
 * [kubectl-trace](https://github.com/iovisor/kubectl-trace)
 
 # tools
+* [epublatex](https://github.com/seehuhn/epublatex)
 * [lctn](https://github.com/chenchun/lctn)
 * [cinf](https://github.com/mhausenblas/cinf)
 
