@@ -22,6 +22,7 @@
 # latex
 * [epublatex](https://github.com/seehuhn/epublatex)
 ---
+* [latex-parser](https://github.com/denysvitali/latex-parser)
 * [latex](https://github.com/go-latex/latex)
 
 # docbook

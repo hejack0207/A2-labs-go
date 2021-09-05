@@ -12,6 +12,7 @@
 * [yaml](https://github.com/go-yaml/yaml)
 
 # parser
+* [peg](https://github.com/pointlander/peg)
 * [sql-parser](https://github.com/pingcap/parser)
 
 # db
