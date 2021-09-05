@@ -21,18 +21,5 @@
 # cv
 * [gocv](https://github.com/hybridgroup/gocv)
 
-# auto
-* [gexpect](https://github.com/ThomasRooney/gexpect)
-* [gexpect](https://github.com/shavac/gexpect)
-
-# app
-* [wechat](https://github.com/silenceper/wechat)
-
-# kernel
-* [netlink](https://github.com/vishvananda/netlink)
-
 # web
 * [gin](https://github.com/gin-gonic/gin)
-
-# online
-* [wikigopher](https://github.com/Ishaangandhi/wikigopher)

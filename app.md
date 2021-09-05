@@ -5,7 +5,11 @@
 * [arxiv-fetch](https://github.com/ZakMiller/arxiv-fetch)
 
 # app
+* [wechat](https://github.com/silenceper/wechat)
 * [wechatcmd](https://github.com/liushuchun/wechatcmd)
 * [wtf](https://github.com/wtfutil/wtf)
 * [wtfdocs](https://github.com/wtfutil/wtfdocs)
 
+# auto
+* [gexpect](https://github.com/ThomasRooney/gexpect)
+* [gexpect](https://github.com/shavac/gexpect)
