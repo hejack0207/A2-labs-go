@@ -13,11 +13,11 @@
 
 # html
 * [html2md](https://github.com/suntong/html2md)
-* [html2md-lunny](https://github.com/lunny/html2md)
 * [godown](https://github.com/mattn/godown)
-* [html2md-truthhun](https://github.com/TruthHun/html2md)
 ---
 * [html-to-markdown](https://github.com/JohannesKaufmann/html-to-markdown)
+* [html2md-lunny](https://github.com/lunny/html2md)
+* [html2md-truthhun](https://github.com/TruthHun/html2md)
 
 # latex
 * [epublatex](https://github.com/seehuhn/epublatex)
