@@ -29,6 +29,7 @@
 # trace
 * [salp](https://github.com/mmcshane/salp)
 * [stacktrace](https://github.com/palantir/stacktrace)
+* [gotrace](https://github.com/divan/gotrace)
 
 # editor
 * [vim-go](https://github.com/fatih/vim-go)
