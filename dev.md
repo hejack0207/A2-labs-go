@@ -1,5 +1,6 @@
 # language support
 * [go](https://github.com/golang/go)
+* [gop](https://github.com/goplus/gop)
 * [golang-website](https://github.com/golang/website)
 * [goenv](https://github.com/syndbg/goenv)
 
