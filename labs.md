@@ -29,3 +29,7 @@
 
 # pcap
 * [pcap](https://github.com/0intro/pcap)
+
+# browser
+* [selenium](https://github.com/tebeka/selenium)
+* [go-selenium](https://github.com/sourcegraph/go-selenium)
