@@ -20,6 +20,8 @@
 * [tcptracer-bpf](https://github.com/weaveworks/tcptracer-bpf)
 * [uprobe-http-tracer](https://github.com/sematext/uprobe-http-tracer)
 * [iovisor-ovn](https://github.com/iovisor/iovisor-ovn)
+* [grpc-snoop](https://github.com/nrc/grpc-snoop)
+* [grpc-sniffer](https://github.com/d-ulyanov/grpc-sniffer)
 
 # xdp
 * [oxdpus](https://github.com/sematext/oxdpus)
