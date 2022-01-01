@@ -15,6 +15,7 @@
 * [qmp-list-network-devices](https://github.com/rgl/qmp-list-network-devices)
 * [packer](https://github.com/hashicorp/packer)
 * [packer-builder-qemu-chroot](https://github.com/summerwind/packer-builder-qemu-chroot)
+* [go-qemu](https://github.com/digitalocean/go-qemu)
 
 # k8s tools
 * [ksniff](https://github.com/eldadru/ksniff)
