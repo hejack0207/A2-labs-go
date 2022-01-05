@@ -2,6 +2,15 @@
 * [netlink](https://github.com/vishvananda/netlink)
 * [conntrack](https://github.com/ti-mo/conntrack)
 
+# nettraffic
+* [zk-sniffer](https://github.com/pyinx/zk-sniffer)
+* [mysql-sniffer](https://github.com/zorkian/mysql-sniffer)
+* [sniffer-agent](https://github.com/zr-hebo/sniffer-agent)
+* [go-netflow](https://github.com/rfyiamcool/go-netflow)
+* [httpparse](https://github.com/clearthesky/httpparse)
+* [sniffer](https://github.com/bisrael8191/sniffer)
+* [go-sniffer](https://github.com/40t/go-sniffer)
+
 # ebpf
 * [gobpf](https://github.com/iovisor/gobpf)
 * [ebpf](https://github.com/cilium/ebpf)
