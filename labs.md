@@ -12,6 +12,7 @@
 * [sniffer](https://github.com/bisrael8191/sniffer)
 
 # ebpf
+* [libbpfgo](https://github.com/aquasecurity/libbpfgo)
 * [gobpf](https://github.com/iovisor/gobpf)
 * [ebpf](https://github.com/cilium/ebpf)
 * [ebpfbench](https://github.com/DataDog/ebpfbench)
