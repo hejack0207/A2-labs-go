@@ -1,7 +1,4 @@
-# k8s
-
 # k8s related
-* [istio](https://github.com/istio/istio)
 * [kube-prompt](https://github.com/c-bata/kube-prompt)
 
 # k8s operator
@@ -15,20 +12,6 @@
 * [kubectl-trace](https://github.com/iovisor/kubectl-trace)
 * [gpumounter](https://github.com/pokerfaceSad/GPUMounter)
 * [kube-keepalived-vip](https://github.com/aledbf/kube-keepalived-vip)
-
-# container
-* [containerd](https://github.com/containerd/containerd)
-* [runc](https://github.com/opencontainers/runc)
-* [docker-ce](https://github.com/docker/docker-ce)
-
-# container related
-* [flannel](https://github.com/coreos/flannel)
-* [calico](https://github.com/projectcalico/calico)
-* [cilium](https://github.com/cilium/cilium)
-* [galaxy](https://github.com/tkestack/galaxy)
-* [cni](https://github.com/containernetworking/cni)
-* [mesh](https://github.com/traefik/mesh)
-* [gvisor](https://github.com/google/gvisor)
 
 # container plugin
 * [cni-plugins](https://github.com/greenpau/cni-plugins)
