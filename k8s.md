@@ -1,6 +1,4 @@
 # k8s
-* [k8s](https://github.com/kubernetes/kubernetes)
-* [tke](https://github.com/tkestack/tke)
 
 # k8s related
 * [istio](https://github.com/istio/istio)
