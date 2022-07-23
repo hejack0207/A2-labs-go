@@ -1,10 +1,10 @@
 # k8s tools
-* [ksniff:go](https://github.com/eldadru/ksniff)
-* [kubevirt:go](https://github.com/kubevirt/kubevirt)
+* [kubevirt](https://github.com/kubevirt/kubevirt)
 
 # k8s plugins
 * [kubectl-tree](https://github.com/ahmetb/kubectl-tree)
 * [kubectl-trace](https://github.com/iovisor/kubectl-trace)
+* [ksniff](https://github.com/eldadru/ksniff)
 * [kube-prompt](https://github.com/c-bata/kube-prompt)
 * [krew](https://github.com/kubernetes-sigs/krew)
 * [krew-index](https://github.com/kubernetes-sigs/krew-index)
@@ -34,16 +34,16 @@
 * [bocker](https://github.com/p8952/bocker)
 * [cntr](https://github.com/Mic92/cntr)
 * [cinf](https://github.com/mhausenblas/cinf)
-* [dockermachine:go](https://github.com/docker/machine)
-* [docker-machine-kvm:go](https://github.com/machine-drivers/docker-machine-kvm)dhiltgen/docker-machine-kvm
-* [runq:go](https://github.com/gotoz/runq)
-* [buildah:go](https://github.com/containers/buildah)
+* [dockermachine](https://github.com/docker/machine)
+* [docker-machine-kvm](https://github.com/machine-drivers/docker-machine-kvm)dhiltgen/docker-machine-kvm
+* [runq](https://github.com/gotoz/runq)
+* [buildah](https://github.com/containers/buildah)
+* [log-pilot](https://github.com/AliyunContainerService/log-pilot)
+* [nerdctl](https://github.com/containerd/nerdctl)
 * [ansible-bender:py](https://github.com/ansible-community/ansible-bender)
 * [undocker:py](https://github.com/larsks/undocker)
 * [dockerfile:rb](https://github.com/sunilpp/dockerfile)
-* [log-pilot:go](https://github.com/AliyunContainerService/log-pilot)
-* [nerdctl:go](https://github.com/containerd/nerdctl)
 
 ## image tool
-* [dive:go](https://github.com/wagoodman/dive)
+* [dive](https://github.com/wagoodman/dive)
 * [dfimage:py](https://github.com/LanikSJ/dfimage)
