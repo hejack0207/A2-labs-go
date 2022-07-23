@@ -40,10 +40,6 @@
 * [buildah](https://github.com/containers/buildah)
 * [log-pilot](https://github.com/AliyunContainerService/log-pilot)
 * [nerdctl](https://github.com/containerd/nerdctl)
-* [ansible-bender:py](https://github.com/ansible-community/ansible-bender)
-* [undocker:py](https://github.com/larsks/undocker)
-* [dockerfile:rb](https://github.com/sunilpp/dockerfile)
 
 ## image tool
 * [dive](https://github.com/wagoodman/dive)
-* [dfimage:py](https://github.com/LanikSJ/dfimage)
