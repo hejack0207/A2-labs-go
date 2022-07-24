@@ -11,10 +11,10 @@
 
 # k8s plugins
 * [kubectl-tree](https://github.com/ahmetb/kubectl-tree)
+* [kubectl-trace](https://github.com/iovisor/kubectl-trace)
 * [krew](https://github.com/kubernetes-sigs/krew)
 * [krew-index](https://github.com/kubernetes-sigs/krew-index)
 * [tke-charts](https://github.com/tkestack/charts)
-* [kubectl-trace](https://github.com/iovisor/kubectl-trace)
 * [gpumounter](https://github.com/pokerfaceSad/GPUMounter)
 * [kube-keepalived-vip](https://github.com/aledbf/kube-keepalived-vip)
 
