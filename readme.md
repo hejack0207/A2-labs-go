@@ -3,6 +3,7 @@
 * [kubectl-trace](https://github.com/iovisor/kubectl-trace)
 
 # docker plugin
+* [docker-calico-plugin](https://github.com/projectcalico/libnetwork-plugin)
 
 # tools
 * [epublatex](https://github.com/seehuhn/epublatex)
