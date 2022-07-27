@@ -27,6 +27,8 @@
 * [go-pry](https://github.com/d4l3k/go-pry)
 
 # trace
+* [weaver](https://github.com/grantseltzer/weaver)
+* [fptrace](https://github.com/orivej/fptrace)
 * [salp](https://github.com/mmcshane/salp)
 * [stacktrace](https://github.com/palantir/stacktrace)
 * [gotrace](https://github.com/divan/gotrace)

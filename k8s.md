@@ -1,7 +1,11 @@
 # k8s tools
 * [kubevirt](https://github.com/kubevirt/kubevirt)
+* [kubernetes-sidecar-injector](https://github.com/ExpediaGroup/kubernetes-sidecar-injector)
+* [cli-runtime](https://github.com/kubernetes/cli-runtime)
+* [controller-runtime](https://github.com/kubernetes-sigs/controller-runtime)
 
 # k8s plugins
+* [kubectl-debug-verb](https://github.com/verb/kubectl-debug)
 * [kubectl-tree](https://github.com/ahmetb/kubectl-tree)
 * [kubectl-trace](https://github.com/iovisor/kubectl-trace)
 * [ksniff](https://github.com/eldadru/ksniff)
@@ -10,8 +14,12 @@
 * [krew-index](https://github.com/kubernetes-sigs/krew-index)
 * [tke-charts](https://github.com/tkestack/charts)
 * [gpumounter](https://github.com/pokerfaceSad/GPUMounter)
+* [kube-lineage](https://github.com/tohjustin/kube-lineage)
+* [kubectl-flame](https://github.com/yahoo/kubectl-flame)
 * [k8s-device-plugin](https://github.com/NVIDIA/k8s-device-plugin)
 * [kube-keepalived-vip](https://github.com/aledbf/kube-keepalived-vip)
+* [kubectl-debug-james](https://github.com/JamesTGrant/kubectl-debug)
+* [local-path-provisioner](https://github.com/rancher/local-path-provisioner)
 
 # docker plugin
 * [cni-plugins](https://github.com/greenpau/cni-plugins)
@@ -29,6 +37,7 @@
 * [libnvidia-container-runtime](https://github.com/NVIDIA/libnvidia-container-runtime)
 * [nvidia-docker](https://github.com/NVIDIA/nvidia-docker)
 * [nvidia-container-toolkit](https://github.com/NVIDIA/nvidia-container-toolkit)
+* [docker-log-elasticsearch](https://github.com/rchicoli/docker-log-elasticsearch)
 
 # docker tools
 * [awesome-docker](https://github.com/veggiemonk/awesome-docker)
@@ -45,3 +54,12 @@
 
 ## image tool
 * [dive](https://github.com/wagoodman/dive)
+
+# container tools
+* [plugins](https://github.com/containernetworking/plugins)
+* [lctn](https://github.com/chenchun/lctn)
+* [ipset](https://github.com/chenchun/ipset)
+* [cgroupfs](https://github.com/chenchun/cgroupfs)
+* [cinf](https://github.com/mhausenblas/cinf)
+* [checkpointctl](https://github.com/checkpoint-restore/checkpointctl)
+

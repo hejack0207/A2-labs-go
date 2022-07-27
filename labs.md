@@ -3,6 +3,7 @@
 * [conntrack](https://github.com/ti-mo/conntrack)
 
 # nettraffic
+* [kafka-sniffer](https://github.com/d-ulyanov/kafka-sniffer)
 * [zk-sniffer](https://github.com/pyinx/zk-sniffer)
 * [go-sniffer](https://github.com/40t/go-sniffer)
 * [sniffer-agent](https://github.com/zr-hebo/sniffer-agent)
@@ -22,6 +23,7 @@
 * [louis](https://github.com/sourque/louis)
 * [dockersnoop](https://github.com/stwind/dockersnoop)
 * [fsprobe](https://github.com/Gui774ume/fsprobe)
+* [ms_observability](https://github.com/helloaywewe/ms_observability)
 
 ## network
 * [tcpdog](https://github.com/mehrdadrad/tcpdog)
@@ -32,6 +34,11 @@
 * [iovisor-ovn](https://github.com/iovisor/iovisor-ovn)
 * [grpc-snoop](https://github.com/nrc/grpc-snoop)
 * [grpc-sniffer](https://github.com/d-ulyanov/grpc-sniffer)
+
+# infra-cli
+* [elastic-go](https://github.com/rolinh/elastic-go)
+* [go-jmx-get](https://github.com/kazeburo/go-jmx-get)
+* [mongo-tools](https://github.com/mongodb/mongo-tools)
 
 # xdp
 * [oxdpus](https://github.com/sematext/oxdpus)

@@ -1,3 +1,10 @@
+# debug
+* [ptrace](https://github.com/eaburns/ptrace)
+* [ptrace.go](https://github.com/hjr265/ptrace.go)
+
+# sniff
+* [gopcap](https://github.com/akrennmair/gopcap)
+
 # basic
 * [cobra](https://github.com/spf13/cobra)
 * [pflag](https://github.com/ogier/pflag)
@@ -10,6 +17,7 @@
 
 # data format
 * [yaml](https://github.com/go-yaml/yaml)
+* [ini](https://github.com/go-ini/ini)
 
 # parser
 * [peg](https://github.com/pointlander/peg)
@@ -23,3 +31,6 @@
 
 # web
 * [gin](https://github.com/gin-gonic/gin)
+
+# cloudapi
+* [cloudpan189-api](https://github.com/tickstep/cloudpan189-api)

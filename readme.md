@@ -1,4 +1,5 @@
 # k8s plugin
+* [kubectl-debug-verb](https://github.com/verb/kubectl-debug)
 * [kubectl-tree](https://github.com/ahmetb/kubectl-tree)
 * [kubectl-trace](https://github.com/iovisor/kubectl-trace)
 * [ksniff](https://github.com/eldadru/ksniff)

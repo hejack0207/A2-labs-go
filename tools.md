@@ -19,18 +19,6 @@
 * [go-qemu](https://github.com/digitalocean/go-qemu)
 * [schnapps](https://github.com/ByteArena/schnapps)
 
-# k8s tools
-* [ksniff](https://github.com/eldadru/ksniff)
-* [kubevirt](https://github.com/kubevirt/kubevirt)
-
-# docker tools
-* [dockermachine](https://github.com/docker/machine)
-* [docker-machine-kvm](https://github.com/machine-drivers/docker-machine-kvm) dhiltgen/docker-machine-kvm
-* [buildah](https://github.com/containers/buildah)
-* [log-pilot](https://github.com/AliyunContainerService/log-pilot)
-* [nerdctl](https://github.com/containerd/nerdctl)
-* [dive](https://github.com/wagoodman/dive)
-
 # network
 * [tcpterm](https://github.com/sachaos/tcpterm) tui
 * [skydive](https://github.com/skydive-project/skydive) wui
@@ -57,14 +45,6 @@
 ## postgres
 * [dbdot](https://github.com/akarki15/dbdot)
 * [DbSchemaRel](https://github.com/kazu22002/DbSchemaRel)
-
-# container tools
-* [plugins](https://github.com/containernetworking/plugins)
-* [lctn](https://github.com/chenchun/lctn)
-* [ipset](https://github.com/chenchun/ipset)
-* [cgroupfs](https://github.com/chenchun/cgroupfs)
-* [cinf](https://github.com/mhausenblas/cinf)
-* [checkpointctl](https://github.com/checkpoint-restore/checkpointctl)
 
 # version control
 * [hub](https://github.com/github/hub)
