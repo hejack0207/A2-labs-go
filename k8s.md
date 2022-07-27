@@ -29,9 +29,11 @@
 * [docker-calico-plugin](https://github.com/projectcalico/libnetwork-plugin)
 --------
 * [ceph](https://github.com/yp-engineering/rbd-docker-plugin)
+* [docker-volume-netshare](https://github.com/ContainX/docker-volume-netshare)
 * [docker-volume-sshfs](https://github.com/vieux/docker-volume-sshfs)
 * [docker-volumes-nfs](https://github.com/SvenDowideit/docker-volumes-nfs)
 * [docker-volume-nfs](https://github.com/yzlin/docker-volume-nfs)
+* [docker-lvm-plugin](https://github.com/containers/docker-lvm-plugin)
 --------
 * [libnvidia-container](https://github.com/NVIDIA/libnvidia-container)
 * [libnvidia-container-runtime](https://github.com/NVIDIA/libnvidia-container-runtime)
