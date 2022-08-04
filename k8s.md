@@ -5,9 +5,10 @@
 * [controller-runtime](https://github.com/kubernetes-sigs/controller-runtime)
 
 # k8s plugins
-* [kubectl-debug-verb](https://github.com/verb/kubectl-debug)
 * [kubectl-tree](https://github.com/ahmetb/kubectl-tree)
 * [kubectl-trace](https://github.com/iovisor/kubectl-trace)
+* [kubectl-debug-james](https://github.com/JamesTGrant/kubectl-debug)
+* [kubectl-debug-verb](https://github.com/verb/kubectl-debug)
 * [ksniff](https://github.com/eldadru/ksniff)
 * [kube-prompt](https://github.com/c-bata/kube-prompt)
 * [krew](https://github.com/kubernetes-sigs/krew)
@@ -18,7 +19,6 @@
 * [kubectl-flame](https://github.com/yahoo/kubectl-flame)
 * [k8s-device-plugin](https://github.com/NVIDIA/k8s-device-plugin)
 * [kube-keepalived-vip](https://github.com/aledbf/kube-keepalived-vip)
-* [kubectl-debug-james](https://github.com/JamesTGrant/kubectl-debug)
 * [local-path-provisioner](https://github.com/rancher/local-path-provisioner)
 
 # docker plugin
