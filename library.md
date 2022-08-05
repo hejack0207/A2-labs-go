@@ -1,3 +1,6 @@
+# k8s
+* [operator-sdk](https://github.com/operator-framework/operator-sdk)
+
 # debug
 * [ptrace](https://github.com/eaburns/ptrace)
 * [ptrace.go](https://github.com/hjr265/ptrace.go)
