@@ -5,6 +5,8 @@
 # debug
 * [ptrace](https://github.com/eaburns/ptrace)
 * [ptrace.go](https://github.com/hjr265/ptrace.go)
+* [go-ptrace](https://github.com/connorcl/go-ptrace)
+* [go-strace](https://github.com/hugelgupf/go-strace)
 
 # sniff
 * [gopcap](https://github.com/akrennmair/gopcap)
