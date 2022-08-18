@@ -33,6 +33,9 @@
 * [stacktrace](https://github.com/palantir/stacktrace)
 * [gotrace](https://github.com/divan/gotrace)
 
+# profile
+* [pprof](https://github.com/google/pprof)
+
 # editor
 * [vim-go](https://github.com/fatih/vim-go)
 * [vim-delve](https://github.com/sebdah/vim-delve)
