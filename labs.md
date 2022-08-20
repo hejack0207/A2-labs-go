@@ -24,6 +24,7 @@
 * [dockersnoop](https://github.com/stwind/dockersnoop)
 * [fsprobe](https://github.com/Gui774ume/fsprobe)
 * [ms_observability](https://github.com/helloaywewe/ms_observability)
+* [parca-agent](https://github.com/parca-dev/parca-agent)
 
 ## network
 * [tcpdog](https://github.com/mehrdadrad/tcpdog)
