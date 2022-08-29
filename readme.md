@@ -10,6 +10,10 @@
 # tracing
 * [gotrace](https://github.com/divan/gotrace)
 
+# infra
+* [etcd](https://github.com/etcd-io/etcd)
+* [etcd-website](https://github.com/etcd-io/website)
+
 # dev
 * [gomacro](https://github.com/cosmos72/gomacro)
 * [mage](https://github.com/magefile/mage)
