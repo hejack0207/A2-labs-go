@@ -15,8 +15,6 @@
 * [etcd-website](https://github.com/etcd-io/website)
 
 # dev
-* [gomacro](https://github.com/cosmos72/gomacro)
-* [mage](https://github.com/magefile/mage)
 * [gorun](https://github.com/erning/gorun)
 
 # debug
