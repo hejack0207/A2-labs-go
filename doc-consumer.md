@@ -13,6 +13,7 @@
 
 # html
 * [html2md](https://github.com/suntong/html2md)
+* [html2rst](https://github.com/siongui/html2rst)
 * [godown](https://github.com/mattn/godown)
 ---
 * [html-to-markdown](https://github.com/JohannesKaufmann/html-to-markdown)
