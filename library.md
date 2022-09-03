@@ -2,6 +2,9 @@
 * [operator-sdk](https://github.com/operator-framework/operator-sdk)
 * [automaxprocs](https://github.com/uber-go/automaxprocs)
 
+# ssh
+* [goph](https://github.com/melbahja/goph)
+
 # debug
 * [ptrace](https://github.com/eaburns/ptrace)
 * [ptrace.go](https://github.com/hjr265/ptrace.go)
@@ -11,15 +14,15 @@
 # sniff
 * [gopcap](https://github.com/akrennmair/gopcap)
 
-# basic
+# cli
 * [cobra](https://github.com/spf13/cobra)
 * [pflag](https://github.com/ogier/pflag)
 * [cli](https://github.com/urfave/cli)
----
+* [go-prompt](https://github.com/c-bata/go-prompt)
+
+# tui
 * [tview](https://github.com/rivo/tview)
 * [gocui](https://github.com/jroimartin/gocui)
----
-* [go-prompt](https://github.com/c-bata/go-prompt)
 
 # data format
 * [yaml](https://github.com/go-yaml/yaml)
