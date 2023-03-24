@@ -29,7 +29,6 @@
 
 # docker plugin
 * [cni-plugins](https://github.com/greenpau/cni-plugins)
-* [docker-plugins-helpers](https://github.com/docker/go-plugins-helpers)
 * [docker-sriov-plugin](https://github.com/Mellanox/docker-sriov-plugin)
 * [docker-ovs-plugin](https://github.com/gopher-net/docker-ovs-plugin)
 * [docker-calico-plugin](https://github.com/projectcalico/libnetwork-plugin)

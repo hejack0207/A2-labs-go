@@ -1,5 +1,6 @@
 # docker
 * [go-plugin-helpers](https://github.com/docker/go-plugin-helpers)
+* [libnetwork](https://github.com/moby/libnetwork)
 
 # k8s
 * [operator-sdk](https://github.com/operator-framework/operator-sdk)
