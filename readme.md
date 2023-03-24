@@ -6,6 +6,9 @@
 
 # docker plugin
 * [docker-calico-plugin](https://github.com/projectcalico/libnetwork-plugin)
+* [docker-sriov-plugin](https://github.com/Mellanox/docker-sriov-plugin)
+* [docker-ovs-plugin](https://github.com/gopher-net/docker-ovs-plugin)
+* [docker-volume-sshfs](https://github.com/vieux/docker-volume-sshfs)
 
 # tracing
 * [gotrace](https://github.com/divan/gotrace)
