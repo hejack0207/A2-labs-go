@@ -2,16 +2,6 @@
 * [netlink](https://github.com/vishvananda/netlink)
 * [conntrack](https://github.com/ti-mo/conntrack)
 
-# nettraffic
-* [kafka-sniffer](https://github.com/d-ulyanov/kafka-sniffer)
-* [zk-sniffer](https://github.com/pyinx/zk-sniffer)
-* [go-sniffer](https://github.com/40t/go-sniffer)
-* [sniffer-agent](https://github.com/zr-hebo/sniffer-agent)
-* [mysql-sniffer](https://github.com/zorkian/mysql-sniffer)
-* [go-netflow](https://github.com/rfyiamcool/go-netflow)
-* [httpparse](https://github.com/clearthesky/httpparse)
-* [sniffer](https://github.com/bisrael8191/sniffer)
-
 # ebpf
 * [libbpfgo](https://github.com/aquasecurity/libbpfgo)
 * [gobpf](https://github.com/iovisor/gobpf)
@@ -36,7 +26,7 @@
 * [grpc-snoop](https://github.com/nrc/grpc-snoop)
 * [grpc-sniffer](https://github.com/d-ulyanov/grpc-sniffer)
 
-# xdp
+## xdp
 * [oxdpus](https://github.com/sematext/oxdpus)
 
 # video
