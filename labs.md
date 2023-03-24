@@ -25,21 +25,16 @@
 * [fsprobe](https://github.com/Gui774ume/fsprobe)
 * [ms_observability](https://github.com/helloaywewe/ms_observability)
 * [parca-agent](https://github.com/parca-dev/parca-agent)
+* [tcptracer-bpf](https://github.com/weaveworks/tcptracer-bpf)
+* [socket-connect-bpf](https://github.com/p-/socket-connect-bpf)
+* [uprobe-http-tracer](https://github.com/sematext/uprobe-http-tracer)
 
 ## network
 * [tcpdog](https://github.com/mehrdadrad/tcpdog)
-* [socket-connect-bpf](https://github.com/p-/socket-connect-bpf)
 * [flowlat](https://github.com/markpash/flowlat)
-* [tcptracer-bpf](https://github.com/weaveworks/tcptracer-bpf)
-* [uprobe-http-tracer](https://github.com/sematext/uprobe-http-tracer)
 * [iovisor-ovn](https://github.com/iovisor/iovisor-ovn)
 * [grpc-snoop](https://github.com/nrc/grpc-snoop)
 * [grpc-sniffer](https://github.com/d-ulyanov/grpc-sniffer)
-
-# infra-cli
-* [elastic-go](https://github.com/rolinh/elastic-go)
-* [go-jmx-get](https://github.com/kazeburo/go-jmx-get)
-* [mongo-tools](https://github.com/mongodb/mongo-tools)
 
 # xdp
 * [oxdpus](https://github.com/sematext/oxdpus)
