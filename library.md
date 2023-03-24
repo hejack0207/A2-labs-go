@@ -1,3 +1,6 @@
+# docker
+* [go-plugin-helpers](https://github.com/docker/go-plugin-helpers)
+
 # k8s
 * [operator-sdk](https://github.com/operator-framework/operator-sdk)
 * [automaxprocs](https://github.com/uber-go/automaxprocs)
