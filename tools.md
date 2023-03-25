@@ -18,7 +18,3 @@
 * [lazygit](https://github.com/jesseduffield/lazygit)
 * [fetch](https://github.com/gruntwork-io/fetch)
 * [git-hound](https://github.com/ezekg/git-hound)
-
-# doc tools
-* [hugo](https://github.com/gohugoio/hugo)
-* [hugodocs](https://github.com/gohugoio/hugoDocs)
