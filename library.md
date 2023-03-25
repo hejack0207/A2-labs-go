@@ -36,7 +36,8 @@
 * [peg](https://github.com/pointlander/peg)
 * [sql-parser](https://github.com/pingcap/parser)
 
-# db
+# infra
+## db
 * [gorp](https://github.com/go-gorp/gorp)
 
 # cv
