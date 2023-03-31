@@ -13,6 +13,7 @@
 * [kubectl-debug-james](https://github.com/JamesTGrant/kubectl-debug)
 * [kubectl-debug-verb](https://github.com/verb/kubectl-debug)
 * [ksniff](https://github.com/eldadru/ksniff)
+* [kstrace](https://github.com/MichaelWasher/kstrace)
 * [kube-prompt](https://github.com/c-bata/kube-prompt)
 * [krew](https://github.com/kubernetes-sigs/krew)
 * [krew-index](https://github.com/kubernetes-sigs/krew-index)
