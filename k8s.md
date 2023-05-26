@@ -1,43 +1,34 @@
-# k8s
-* [k8s](https://github.com/kubernetes/kubernetes)
-* [tke](https://github.com/tkestack/tke)
+# k8s tools
+* [kubevirt](https://github.com/kubevirt/kubevirt)
+* [kubernetes-sidecar-injector](https://github.com/ExpediaGroup/kubernetes-sidecar-injector)
+* [cli-runtime](https://github.com/kubernetes/cli-runtime)
+* [controller-runtime](https://github.com/kubernetes-sigs/controller-runtime)
 
-# k8s related
-* [istio](https://github.com/istio/istio)
-* [kube-prompt](https://github.com/c-bata/kube-prompt)
+# k8s dev
+* [cilium-perf-networking](https://github.com/cilium/cilium-perf-networking)
 
-# k8s operator
-* [keepalived-operator](https://github.com/redhat-cop/keepalived-operator)
-
-# k8s plugins
+# kubectl plugins
 * [kubectl-tree](https://github.com/ahmetb/kubectl-tree)
+* [kubectl-trace](https://github.com/iovisor/kubectl-trace)
+* [kubectl-debug-james](https://github.com/JamesTGrant/kubectl-debug)
+* [kubectl-debug-verb](https://github.com/verb/kubectl-debug)
+* [ksniff](https://github.com/eldadru/ksniff)
+* [kstrace](https://github.com/MichaelWasher/kstrace)
+* [kube-prompt](https://github.com/c-bata/kube-prompt)
 * [krew](https://github.com/kubernetes-sigs/krew)
 * [krew-index](https://github.com/kubernetes-sigs/krew-index)
 * [tke-charts](https://github.com/tkestack/charts)
-* [kubectl-trace](https://github.com/iovisor/kubectl-trace)
 * [gpumounter](https://github.com/pokerfaceSad/GPUMounter)
+* [kube-lineage](https://github.com/tohjustin/kube-lineage)
+* [kubectl-flame](https://github.com/yahoo/kubectl-flame)
+* [k8s-device-plugin](https://github.com/NVIDIA/k8s-device-plugin)
 * [kube-keepalived-vip](https://github.com/aledbf/kube-keepalived-vip)
 
-# container
-* [containerd](https://github.com/containerd/containerd)
-* [runc](https://github.com/opencontainers/runc)
-* [docker-ce](https://github.com/docker/docker-ce)
+# k8s plugins
+* [csi-driver-nvmf](https://github.com/kubernetes-csi/csi-driver-nvmf)
+* [local-path-provisioner](https://github.com/rancher/local-path-provisioner)
 
-# container related
-* [flannel](https://github.com/coreos/flannel)
-* [calico](https://github.com/projectcalico/calico)
-* [cilium](https://github.com/cilium/cilium)
-* [galaxy](https://github.com/tkestack/galaxy)
-* [cni](https://github.com/containernetworking/cni)
-* [mesh](https://github.com/traefik/mesh)
-* [gvisor](https://github.com/google/gvisor)
-
-# container plugin
-* [cni-plugins](https://github.com/greenpau/cni-plugins)
-* [docker-plugins-helpers](https://github.com/docker/go-plugins-helpers)
-* [docker-sriov-plugin](https://github.com/Mellanox/docker-sriov-plugin)
-* [docker-ovs-plugin](https://github.com/gopher-net/docker-ovs-plugin)
-* [docker-volume-sshfs](https://github.com/vieux/docker-volume-sshfs)
-* [docker-volumes-nfs](https://github.com/SvenDowideit/docker-volumes-nfs)
-* [docker-volume-nfs](https://github.com/yzlin/docker-volume-nfs)
-* [docker-calico-plugin](https://github.com/projectcalico/libnetwork-plugin)
+# oam
+* [oamctl](https://github.com/oam-dev/oamctl)
+* [oam-spec](https://github.com/oam-dev/spec)
+* [kubevela](https://github.com/oam-dev/kubevela)
