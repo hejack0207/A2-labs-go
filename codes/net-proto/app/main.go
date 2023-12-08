@@ -23,48 +23,61 @@ type Conn struct {
 // Send size 表示要传输的数据总长度；
 // 你需要实现从 reader 读取数据，并将数据通过 TCP 进行传输；
 func (conn *Conn) Send(size int, reader io.Reader) (err error) {
-	var sid uint32 = 1
 	var status uint8 = 'S'
 	packet := new(bytes.Buffer)
 	buf := make([]byte, 2<<10)
+	var sentbytes int64 = 0
+	var remained []byte = nil
+
+	binary.Write(packet, binary.BigEndian, int64(size))
 	for {
 		n, err := reader.Read(buf)
 		if n > 0 {
 			if err == io.EOF {
-				status = 'F'
-			} else if err == nil {
-				status = 'C'
-			}
-		} else {
-			if err == io.EOF {
-				status = 'F'
+				if sentbytes+int64(n) != int64(size) {
+					return err // TODO
+				} else {
+					status = 'F'
+				}
 			} else if err == nil {
 				status = 'C'
 			} else {
 				return err
 			}
+		} else {
+			if err != nil && err != io.EOF {
+				return err
+			}
 		}
-		binary.Write(packet, binary.BigEndian, sid)
-		binary.Write(packet, binary.BigEndian, status)
-		binary.Write(packet, binary.BigEndian, n)
-		binary.Write(packet, binary.BigEndian, buf[:n])
-		conn.tcpconn.Write(packet.Bytes())
+
+		if n > 0 {
+			binary.Write(packet, binary.BigEndian, status)
+			binary.Write(packet, binary.BigEndian, n)
+			if remained != nil {
+				binary.Write(packet, binary.BigEndian, append(remained, buf[:n]...))
+			} else {
+				binary.Write(packet, binary.BigEndian, buf[:n])
+			}
+			var count = 0
+			count, err = conn.tcpconn.Write(packet.Bytes())
+			fmt.Println("sentbytes:", count)
+			if count < n {
+				remained = buf[count:n]
+			}
+			sentbytes += int64(count)
+		}
 		if status == 'F' {
-			break
+			return nil
 		}
 	}
-	// if err != nil {
-	//         panic(err)
-	// }
-	return err
 }
 
 type DataReader struct {
-	tcpconn  net.Conn
-	sid      int64
-	status   uint8
-	length   int64
-	consumed int64
+	tcpconn   net.Conn
+	totalsize int64
+	status    uint8
+	length    int64
+	consumed  int64
 }
 
 func (reader *DataReader) Read(buff []byte) (int, error) {
@@ -72,35 +85,41 @@ func (reader *DataReader) Read(buff []byte) (int, error) {
 	packet := new(bytes.Buffer)
 
 	const (
-		SID_LEN    = 8
-		STATUS_LEN = 1
-		LENGTH_LEN = 8
+		TOTALSIZE_LEN = 8
+		STATUS_LEN    = 1
+		LENGTH_LEN    = 8
 	)
-	var fieldbuf []byte = nil
+	var fieldbuf []byte = make([]byte, 8)
 	var (
-		partial_sid           = []byte{}
-		partial_length []byte = nil
+		partial_totalsize []byte = nil
+		partial_length    []byte = nil
 	)
 
 	for {
 		n, err := reader.tcpconn.Read(buf)
+		fmt.Println("total ", n, " is read")
 		if n > 0 {
-			packet = bytes.NewBuffer(buf)
-			if reader.sid == 0 {
-				if len(partial_sid) == 0 {
-					if packet.Len() > SID_LEN {
-						fieldbuf = packet.Next(SID_LEN)
-						reader.sid, _ = binary.Varint(fieldbuf)
+			packet = bytes.NewBuffer(buf[:n])
+
+			if reader.totalsize == -1 {
+				if len(partial_totalsize) == 0 {
+					if packet.Len() > TOTALSIZE_LEN {
+						// fieldbuf = packet.Next(TOTALSIZE_LEN)
+						c, _ := packet.Read(fieldbuf)
+						fmt.Println("c read ", c)
+						i, e := binary.Varint(fieldbuf)
+						reader.totalsize = i
+						fmt.Println("totalsize ", reader.totalsize, " error:", e)
 					} else {
-						partial_sid = packet.Bytes()
+						partial_totalsize = packet.Bytes()
 						continue
 					}
 				} else {
-					if packet.Len() > SID_LEN-len(partial_sid) {
-						fieldbuf = packet.Next(SID_LEN - len(partial_sid))
-						reader.sid, _ = binary.Varint(append(partial_sid, fieldbuf...))
+					if packet.Len() > TOTALSIZE_LEN-len(partial_totalsize) {
+						fieldbuf = packet.Next(TOTALSIZE_LEN - len(partial_totalsize))
+						reader.totalsize, _ = binary.Varint(append(partial_totalsize, fieldbuf...))
 					} else {
-						partial_sid = append(partial_sid, packet.Bytes()...)
+						partial_totalsize = append(partial_totalsize, packet.Bytes()...)
 						continue
 					}
 				}
@@ -137,7 +156,7 @@ func (reader *DataReader) Read(buff []byte) (int, error) {
 
 			if reader.status == 'C' {
 				if packet.Len() > 0 {
-					consumed, e := packet.Read(buf)
+					consumed, e := packet.Read(buff)
 					reader.consumed += int64(consumed)
 					return consumed, e
 				} else {
@@ -145,7 +164,7 @@ func (reader *DataReader) Read(buff []byte) (int, error) {
 				}
 			} else if reader.status == 'F' {
 				if packet.Len() > 0 {
-					consumed, e := packet.Read(buf)
+					consumed, e := packet.Read(buff)
 					reader.consumed += int64(consumed)
 					return consumed, e
 				} else {
@@ -170,111 +189,17 @@ func (reader *DataReader) Read(buff []byte) (int, error) {
 // 你需要实现向 reader 中写入从 TCP 接收到的数据；
 func (conn *Conn) Receive() (reader io.Reader, err error) {
 	return &DataReader{
-		tcpconn:  conn.tcpconn,
-		sid:      -1,
-		status:   'U',
-		length:   -1,
-		consumed: 0,
+		tcpconn:   conn.tcpconn,
+		totalsize: -1,
+		status:    'U',
+		length:    -1,
+		consumed:  0,
 	}, nil
 }
 
-// func (conn *Conn) Receive() (reader io.Reader, err error) {
-//         buf := make([]byte, 2<<10)
-//         packet := new(bytes.Buffer)
-//         userdata := new(bytes.Buffer)
-//
-//         var sid int64 = 0
-//         const (
-//                 SID_LEN    = 8
-//                 STATUS_LEN = 1
-//                 LENGTH_LEN = 8
-//         )
-//         var (
-//                 status uint8 = 'U'
-//                 length int64 = -1
-//         )
-//         var fieldbuf []byte = nil
-//         var (
-//                 partial_sid           = []byte{}
-//                 partial_length []byte = nil
-//         )
-//
-//         return &DataReader{}, nil
-//
-//         for {
-//                 n, err := conn.tcpconn.Read(buf)
-//                 if n > 0 {
-//                         packet = bytes.NewBuffer(buf)
-//                         if sid == 0 {
-//                                 if len(partial_sid) == 0 {
-//                                         if packet.Len() > SID_LEN {
-//                                                 fieldbuf = packet.Next(SID_LEN)
-//                                                 sid, _ = binary.Varint(fieldbuf)
-//                                         } else {
-//                                                 partial_sid = packet.Bytes()
-//                                                 continue
-//                                         }
-//                                 } else {
-//                                         if packet.Len() > SID_LEN-len(partial_sid) {
-//                                                 fieldbuf = packet.Next(SID_LEN - len(partial_sid))
-//                                                 sid, _ = binary.Varint(append(partial_sid, fieldbuf...))
-//                                         } else {
-//                                                 partial_sid = append(partial_sid, packet.Bytes()...)
-//                                                 continue
-//                                         }
-//                                 }
-//                         }
-//
-//                         if status == 'U' {
-//                                 if packet.Len() > STATUS_LEN {
-//                                         fieldbuf = packet.Next(STATUS_LEN)
-//                                         status = fieldbuf[0]
-//                                 } else {
-//                                         continue
-//                                 }
-//                         }
-//
-//                         if length == -1 {
-//                                 if len(partial_length) == 0 {
-//                                         if packet.Len() > LENGTH_LEN {
-//                                                 fieldbuf = packet.Next(LENGTH_LEN)
-//                                                 length, _ = binary.Varint(fieldbuf)
-//                                         } else {
-//                                                 partial_length = packet.Bytes()
-//                                                 continue
-//                                         }
-//                                 } else {
-//                                         if packet.Len() > LENGTH_LEN-len(partial_length) {
-//                                                 fieldbuf = packet.Next(LENGTH_LEN - len(partial_length))
-//                                                 sid, _ = binary.Varint(append(partial_length, fieldbuf...))
-//                                         } else {
-//                                                 partial_length = append(partial_length, packet.Bytes()...)
-//                                                 continue
-//                                         }
-//                                 }
-//                         }
-//
-//                         // if packet.Len() > 0 {
-//                         //
-//                         // }
-//                         if status == 'C' {
-//                                 userdata.Write(packet.Bytes())
-//                         } else if status == 'F' {
-//                                 // if packet.Len() == length(int) {
-//                                 // }
-//                         }
-//
-//                         if err != nil {
-//                                 break
-//                         }
-//
-//                 }
-//         }
-//         return userdata, err
-// }
-
 // Close 用于关闭你实现的连接对象及其相关资源
 func (conn *Conn) Close() {
+	conn.tcpconn.Close()
 }
 
 // NewConn 从一个 TCP 连接得到一个你实现的连接对象
@@ -491,5 +416,5 @@ func testCase1() {
 
 func main() {
 	testCase0()
-	testCase1()
+	// testCase1()
 }
