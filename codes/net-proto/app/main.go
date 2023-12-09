@@ -6,13 +6,17 @@ import (
 	"crypto/sha256"
 	"encoding/binary"
 	"encoding/hex"
+	"errors"
 	"fmt"
 	"io"
 	"log"
 	"net"
 	"os"
 	"sync"
+	"time"
 )
+
+const SIZE_LEN = 8
 
 // Conn 是你需要实现的一种连接类型，它支持下面描述的若干接口；
 // 为了实现这些接口，你需要设计一个基于 TCP 的简单协议；
@@ -23,177 +27,150 @@ type Conn struct {
 // Send size 表示要传输的数据总长度；
 // 你需要实现从 reader 读取数据，并将数据通过 TCP 进行传输；
 func (conn *Conn) Send(size int, reader io.Reader) (err error) {
-	var status uint8 = 'S'
 	packet := new(bytes.Buffer)
 	buf := make([]byte, 2<<10)
 	var sentbytes int64 = 0
-	var remained []byte = nil
+	// var remained []byte = nil
 
 	binary.Write(packet, binary.BigEndian, int64(size))
 	for {
 		n, err := reader.Read(buf)
-		if n > 0 {
-			if err == io.EOF {
-				if sentbytes+int64(n) != int64(size) {
-					return err // TODO
-				} else {
-					status = 'F'
-				}
-			} else if err == nil {
-				status = 'C'
-			} else {
-				return err
+		if err == io.EOF {
+			if sentbytes+int64(n) != int64(size)+SIZE_LEN {
+				return err // TODO
 			}
-		} else {
-			if err != nil && err != io.EOF {
-				return err
-			}
+		} else if err != nil {
+			return err
 		}
 
 		if n > 0 {
-			binary.Write(packet, binary.BigEndian, status)
-			binary.Write(packet, binary.BigEndian, n)
-			if remained != nil {
-				binary.Write(packet, binary.BigEndian, append(remained, buf[:n]...))
-			} else {
-				binary.Write(packet, binary.BigEndian, buf[:n])
+			// if remained != nil {
+			//         binary.Write(packet, binary.BigEndian, append(remained, buf[:n]...))
+			// } else {
+			//         binary.Write(packet, binary.BigEndian, buf[:n])
+			// }
+
+			binary.Write(packet, binary.BigEndian, buf[:n])
+
+			bc := packet.Len()
+
+			// count, e := conn.tcpconn.Write(packet.Bytes())
+			count, e := packet.WriteTo(conn.tcpconn)
+
+			ac := packet.Len()
+
+			if count != int64(bc-ac) {
+				fmt.Println("error")
 			}
-			var count = 0
-			count, err = conn.tcpconn.Write(packet.Bytes())
-			fmt.Println("sentbytes:", count)
-			if count < n {
-				remained = buf[count:n]
+
+			// if count < len(remained)+n {
+			//         remained = buf[count : len(remained)+n]
+			// }
+
+			// binary.Write(packet, binary.BigEndian, buf[:n])
+			// count, e := conn.tcpconn.Write(packet.Bytes())
+
+			if e != nil {
+				return e
 			}
 			sentbytes += int64(count)
-		}
-		if status == 'F' {
-			return nil
+			// fmt.Println("SEND sentbytes:", count, ",size:", size)
+			if sentbytes >= int64(size)+SIZE_LEN {
+				// fmt.Println("SEND sentbytes:", sentbytes, ",size:", size)
+				sentbytes -= (int64(size) + SIZE_LEN)
+				return nil
+			}
 		}
 	}
 }
 
 type DataReader struct {
-	tcpconn   net.Conn
-	totalsize int64
-	status    uint8
-	length    int64
-	consumed  int64
+	tcpconn       net.Conn
+	packet        *bytes.Buffer
+	totalsize     int64
+	totalconsumed int64
 }
 
 func (reader *DataReader) Read(buff []byte) (int, error) {
-	buf := make([]byte, 2<<10)
-	packet := new(bytes.Buffer)
-
-	const (
-		TOTALSIZE_LEN = 8
-		STATUS_LEN    = 1
-		LENGTH_LEN    = 8
-	)
-	var fieldbuf []byte = make([]byte, 8)
-	var (
-		partial_totalsize []byte = nil
-		partial_length    []byte = nil
-	)
+	buf := make([]byte, len(buff))
 
 	for {
+		now := time.Now()
+		deadline := now.Add(1 * 1000 * 1000 * 1000)
+		reader.tcpconn.SetReadDeadline(deadline)
 		n, err := reader.tcpconn.Read(buf)
-		fmt.Println("total ", n, " is read")
+		// n, err := reader.packet.ReadFrom(reader.tcpconn)
+		if err != nil {
+			if !errors.Is(err, os.ErrDeadlineExceeded) {
+				return n, err
+			} else {
+				// fmt.Println("now:", now, ",deadline:", deadline)
+			}
+		}
 		if n > 0 {
-			packet = bytes.NewBuffer(buf[:n])
-
-			if reader.totalsize == -1 {
-				if len(partial_totalsize) == 0 {
-					if packet.Len() > TOTALSIZE_LEN {
-						// fieldbuf = packet.Next(TOTALSIZE_LEN)
-						c, _ := packet.Read(fieldbuf)
-						fmt.Println("c read ", c)
-						i, e := binary.Varint(fieldbuf)
-						reader.totalsize = i
-						fmt.Println("totalsize ", reader.totalsize, " error:", e)
-					} else {
-						partial_totalsize = packet.Bytes()
-						continue
-					}
-				} else {
-					if packet.Len() > TOTALSIZE_LEN-len(partial_totalsize) {
-						fieldbuf = packet.Next(TOTALSIZE_LEN - len(partial_totalsize))
-						reader.totalsize, _ = binary.Varint(append(partial_totalsize, fieldbuf...))
-					} else {
-						partial_totalsize = append(partial_totalsize, packet.Bytes()...)
-						continue
-					}
-				}
+			n2, _ := reader.packet.Write(buf[:n])
+			if n2 != n {
+				// fmt.Println("RECV error")
 			}
 
-			if reader.status == 'U' {
-				if packet.Len() > STATUS_LEN {
-					fieldbuf = packet.Next(STATUS_LEN)
-					reader.status = fieldbuf[0]
+			if reader.totalsize == -1 {
+				if reader.packet.Len() >= SIZE_LEN {
+					bc := reader.packet.Len()
+					binary.Read(reader.packet, binary.BigEndian, &reader.totalsize)
+					ac := reader.packet.Len()
+					if SIZE_LEN != bc-ac {
+						fmt.Println("RECV error")
+					}
+					// fmt.Println("totalsize ", reader.totalsize)
 				} else {
 					continue
 				}
 			}
 
-			if reader.length == -1 {
-				if len(partial_length) == 0 {
-					if packet.Len() > LENGTH_LEN {
-						fieldbuf = packet.Next(LENGTH_LEN)
-						reader.length, _ = binary.Varint(fieldbuf)
-					} else {
-						partial_length = packet.Bytes()
-						continue
-					}
-				} else {
-					if packet.Len() > LENGTH_LEN-len(partial_length) {
-						fieldbuf = packet.Next(LENGTH_LEN - len(partial_length))
-						reader.length, _ = binary.Varint(append(partial_length, fieldbuf...))
-					} else {
-						partial_length = append(partial_length, packet.Bytes()...)
-						continue
-					}
-				}
+			consumed, e := 0, error(nil)
+			if reader.totalsize-reader.totalconsumed <= int64(len(buff)) {
+				// if reader.recvconfirmed-reader.totalconsumed <= int64(len(buff)) {
+				limitreader := io.LimitReader(reader.packet, reader.totalsize-reader.totalconsumed)
+				consumed, e = limitreader.Read(buff)
+			} else {
+				consumed, e = reader.packet.Read(buff)
 			}
+			reader.totalconsumed += int64(consumed)
+			// fmt.Println("RECV totalconsumed:", reader.totalconsumed, ",totalsize:", reader.totalsize)
 
-			if reader.status == 'C' {
-				if packet.Len() > 0 {
-					consumed, e := packet.Read(buff)
-					reader.consumed += int64(consumed)
-					return consumed, e
-				} else {
-					return 0, nil
-				}
-			} else if reader.status == 'F' {
-				if packet.Len() > 0 {
-					consumed, e := packet.Read(buff)
-					reader.consumed += int64(consumed)
-					return consumed, e
-				} else {
-					if reader.consumed == reader.length {
-						return 0, io.EOF
-					} else {
-						return 0, nil
-					}
-				}
+			// if reader.totalconsumed == reader.totalsize {
+			//         if consumed != 0 {
+			//                 fmt.Println("RECV consumed:", consumed, "totalconsumed:", reader.totalconsumed, ",totalsize:", reader.totalsize)
+			//                 return consumed, nil
+			//         } else {
+			//                 fmt.Println("RECV consumed:", consumed, "totalconsumed:", reader.totalconsumed, ",totalsize:", reader.totalsize)
+			//                 reader.totalconsumed = 0
+			//                 reader.totalsize = -1
+			//                 return consumed, io.EOF
+			//         }
+			// } else {
+			//         return consumed, e
+			// }
+			return consumed, e
+		} else {
+			if reader.totalconsumed == reader.totalsize {
+				// fmt.Println("RECV consumed:", 0, "totalconsumed:", reader.totalconsumed, ",totalsize:", reader.totalsize)
+				reader.totalconsumed = 0
+				reader.totalsize = -1
+				return 0, io.EOF
 			}
-
-			if err != nil {
-				break
-			}
-
 		}
 	}
-	return 0, nil
 }
 
 // Receive 返回的 reader 用于接收数据；
 // 你需要实现向 reader 中写入从 TCP 接收到的数据；
 func (conn *Conn) Receive() (reader io.Reader, err error) {
 	return &DataReader{
-		tcpconn:   conn.tcpconn,
-		totalsize: -1,
-		status:    'U',
-		length:    -1,
-		consumed:  0,
+		tcpconn:       conn.tcpconn,
+		packet:        new(bytes.Buffer),
+		totalsize:     -1,
+		totalconsumed: 0,
 	}, nil
 }
 
@@ -343,9 +320,11 @@ func testCase1() {
 				}
 				_hash.Write(buf[:n])
 				total += n
+				// _log.Println("server receive data size:", total)
 			}
 			checksum := _hash.Sum(nil)
-			_log.Println("server receive data checksum", hex.EncodeToString(_hash.Sum(nil)))
+			// _log.Println("server receive data checksum", hex.EncodeToString(_hash.Sum(nil)))
+			_log.Println("server receive data size:", total, ",checksum:", hex.EncodeToString(_hash.Sum(nil)))
 			// 服务端将接收到的数据的 checksum 作为响应发送给客户端
 			err = conn.Send(len(checksum), bytes.NewBuffer(checksum))
 			if err != nil {
@@ -416,5 +395,5 @@ func testCase1() {
 
 func main() {
 	testCase0()
-	// testCase1()
+	testCase1()
 }
