@@ -22,6 +22,7 @@ const SIZE_LEN = 8
 // 为了实现这些接口，你需要设计一个基于 TCP 的简单协议；
 type Conn struct {
 	tcpconn net.Conn
+	reader  *DataReader
 }
 
 // Send size 表示要传输的数据总长度；
@@ -30,45 +31,21 @@ func (conn *Conn) Send(size int, reader io.Reader) (err error) {
 	packet := new(bytes.Buffer)
 	buf := make([]byte, 2<<10)
 	var sentbytes int64 = 0
-	// var remained []byte = nil
 
 	binary.Write(packet, binary.BigEndian, int64(size))
 	for {
 		n, err := reader.Read(buf)
 		if err == io.EOF {
 			if sentbytes+int64(n) != int64(size)+SIZE_LEN {
-				return err // TODO
+				panic(err)
 			}
 		} else if err != nil {
 			return err
 		}
 
 		if n > 0 {
-			// if remained != nil {
-			//         binary.Write(packet, binary.BigEndian, append(remained, buf[:n]...))
-			// } else {
-			//         binary.Write(packet, binary.BigEndian, buf[:n])
-			// }
-
 			binary.Write(packet, binary.BigEndian, buf[:n])
-
-			bc := packet.Len()
-
-			// count, e := conn.tcpconn.Write(packet.Bytes())
 			count, e := packet.WriteTo(conn.tcpconn)
-
-			ac := packet.Len()
-
-			if count != int64(bc-ac) {
-				fmt.Println("error")
-			}
-
-			// if count < len(remained)+n {
-			//         remained = buf[count : len(remained)+n]
-			// }
-
-			// binary.Write(packet, binary.BigEndian, buf[:n])
-			// count, e := conn.tcpconn.Write(packet.Bytes())
 
 			if e != nil {
 				return e
@@ -99,7 +76,7 @@ func (reader *DataReader) Read(buff []byte) (int, error) {
 		deadline := now.Add(1 * 1000 * 1000 * 1000)
 		reader.tcpconn.SetReadDeadline(deadline)
 		n, err := reader.tcpconn.Read(buf)
-		// n, err := reader.packet.ReadFrom(reader.tcpconn)
+
 		if err != nil {
 			if !errors.Is(err, os.ErrDeadlineExceeded) {
 				return n, err
@@ -107,20 +84,12 @@ func (reader *DataReader) Read(buff []byte) (int, error) {
 				// fmt.Println("now:", now, ",deadline:", deadline)
 			}
 		}
-		if n > 0 {
-			n2, _ := reader.packet.Write(buf[:n])
-			if n2 != n {
-				// fmt.Println("RECV error")
-			}
 
+		if n > 0 {
+			reader.packet.Write(buf[:n])
 			if reader.totalsize == -1 {
 				if reader.packet.Len() >= SIZE_LEN {
-					bc := reader.packet.Len()
 					binary.Read(reader.packet, binary.BigEndian, &reader.totalsize)
-					ac := reader.packet.Len()
-					if SIZE_LEN != bc-ac {
-						fmt.Println("RECV error")
-					}
 					// fmt.Println("totalsize ", reader.totalsize)
 				} else {
 					continue
@@ -129,32 +98,24 @@ func (reader *DataReader) Read(buff []byte) (int, error) {
 
 			consumed, e := 0, error(nil)
 			if reader.totalsize-reader.totalconsumed <= int64(len(buff)) {
-				// if reader.recvconfirmed-reader.totalconsumed <= int64(len(buff)) {
 				limitreader := io.LimitReader(reader.packet, reader.totalsize-reader.totalconsumed)
 				consumed, e = limitreader.Read(buff)
 			} else {
 				consumed, e = reader.packet.Read(buff)
 			}
-			reader.totalconsumed += int64(consumed)
-			// fmt.Println("RECV totalconsumed:", reader.totalconsumed, ",totalsize:", reader.totalsize)
 
-			// if reader.totalconsumed == reader.totalsize {
-			//         if consumed != 0 {
-			//                 fmt.Println("RECV consumed:", consumed, "totalconsumed:", reader.totalconsumed, ",totalsize:", reader.totalsize)
-			//                 return consumed, nil
-			//         } else {
-			//                 fmt.Println("RECV consumed:", consumed, "totalconsumed:", reader.totalconsumed, ",totalsize:", reader.totalsize)
-			//                 reader.totalconsumed = 0
-			//                 reader.totalsize = -1
-			//                 return consumed, io.EOF
-			//         }
-			// } else {
-			//         return consumed, e
-			// }
+			reader.totalconsumed += int64(consumed)
+
+			if reader.totalconsumed == reader.totalsize && consumed == 0 {
+				// fmt.Println("RECV consumed:", 0, "totalconsumed:", reader.totalconsumed, ",totalsize:", reader.totalsize)
+				reader.totalconsumed = 0
+				reader.totalsize = -1
+				return 0, io.EOF
+			}
 			return consumed, e
 		} else {
 			if reader.totalconsumed == reader.totalsize {
-				// fmt.Println("RECV consumed:", 0, "totalconsumed:", reader.totalconsumed, ",totalsize:", reader.totalsize)
+				// fmt.Println("RECV totalconsumed:", reader.totalconsumed, ",totalsize:", reader.totalsize)
 				reader.totalconsumed = 0
 				reader.totalsize = -1
 				return 0, io.EOF
@@ -166,12 +127,15 @@ func (reader *DataReader) Read(buff []byte) (int, error) {
 // Receive 返回的 reader 用于接收数据；
 // 你需要实现向 reader 中写入从 TCP 接收到的数据；
 func (conn *Conn) Receive() (reader io.Reader, err error) {
-	return &DataReader{
-		tcpconn:       conn.tcpconn,
-		packet:        new(bytes.Buffer),
-		totalsize:     -1,
-		totalconsumed: 0,
-	}, nil
+	if conn.reader == nil {
+		conn.reader = &DataReader{
+			tcpconn:       conn.tcpconn,
+			packet:        new(bytes.Buffer),
+			totalsize:     -1,
+			totalconsumed: 0,
+		}
+	}
+	return conn.reader, nil
 }
 
 // Close 用于关闭你实现的连接对象及其相关资源
@@ -320,11 +284,9 @@ func testCase1() {
 				}
 				_hash.Write(buf[:n])
 				total += n
-				// _log.Println("server receive data size:", total)
 			}
 			checksum := _hash.Sum(nil)
-			// _log.Println("server receive data checksum", hex.EncodeToString(_hash.Sum(nil)))
-			_log.Println("server receive data size:", total, ",checksum:", hex.EncodeToString(_hash.Sum(nil)))
+			_log.Println("server receive data checksum", hex.EncodeToString(_hash.Sum(nil)))
 			// 服务端将接收到的数据的 checksum 作为响应发送给客户端
 			err = conn.Send(len(checksum), bytes.NewBuffer(checksum))
 			if err != nil {
