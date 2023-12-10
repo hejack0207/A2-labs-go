@@ -5,4 +5,5 @@ build:
 
 
 test:
-	go test -v app/main_test.go
+	# go test -v testcase/main_test.go
+	go test -v ./testcase

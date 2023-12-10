@@ -18,6 +18,8 @@ func triggerPanic() {
 	panic("error occurred!")
 }
 
-func main() {
-	panicRecover()
+func TestPanicRecover(t *testing.T) {
+	if testing.Short() {
+		t.Skip("skipping test in short mode.")
+	}
 }
