@@ -13,7 +13,7 @@ import (
 	"net"
 	"os"
 	"sync"
-	"time"
+	// "time"
 )
 
 const SIZE_LEN = 8
@@ -38,13 +38,21 @@ func (conn *Conn) Send(size int, reader io.Reader) (err error) {
 		if err == io.EOF {
 			if sentbytes+int64(n) != int64(size)+SIZE_LEN {
 				panic(err)
+			} else {
+				binary.Write(packet, binary.BigEndian, []byte{'F'})
+				_, e := packet.WriteTo(conn.tcpconn)
+				return e
 			}
 		} else if err != nil {
 			return err
 		}
 
 		if n > 0 {
-			binary.Write(packet, binary.BigEndian, buf[:n])
+			if int64(n) > int64(size)+SIZE_LEN-sentbytes {
+				binary.Write(packet, binary.BigEndian, buf[:int64(size)-sentbytes])
+			} else {
+				binary.Write(packet, binary.BigEndian, buf[:n])
+			}
 			count, e := packet.WriteTo(conn.tcpconn)
 
 			if e != nil {
@@ -52,10 +60,12 @@ func (conn *Conn) Send(size int, reader io.Reader) (err error) {
 			}
 			sentbytes += int64(count)
 			// fmt.Println("SEND sentbytes:", count, ",size:", size)
-			if sentbytes >= int64(size)+SIZE_LEN {
+			if sentbytes == int64(size)+SIZE_LEN {
 				// fmt.Println("SEND sentbytes:", sentbytes, ",size:", size)
-				sentbytes -= (int64(size) + SIZE_LEN)
-				return nil
+				// sentbytes -= (int64(size) + SIZE_LEN)
+				binary.Write(packet, binary.BigEndian, []byte{'F'})
+				count, e = packet.WriteTo(conn.tcpconn)
+				return e
 			}
 		}
 	}
@@ -66,61 +76,65 @@ type DataReader struct {
 	packet        *bytes.Buffer
 	totalsize     int64
 	totalconsumed int64
+	tcpclosed     bool
 }
 
 func (reader *DataReader) Read(buff []byte) (int, error) {
 	buf := make([]byte, len(buff))
 
 	for {
-		now := time.Now()
-		deadline := now.Add(1 * 1000 * 1000 * 1000)
-		reader.tcpconn.SetReadDeadline(deadline)
-		n, err := reader.tcpconn.Read(buf)
-
-		if err != nil {
-			if !errors.Is(err, os.ErrDeadlineExceeded) {
-				return n, err
-			} else {
-				// fmt.Println("now:", now, ",deadline:", deadline)
-			}
-		}
-
-		if n > 0 {
-			reader.packet.Write(buf[:n])
-			if reader.totalsize == -1 {
-				if reader.packet.Len() >= SIZE_LEN {
-					binary.Read(reader.packet, binary.BigEndian, &reader.totalsize)
-					// fmt.Println("totalsize ", reader.totalsize)
-				} else {
-					continue
-				}
-			}
-
-			consumed, e := 0, error(nil)
-			if reader.totalsize-reader.totalconsumed <= int64(len(buff)) {
-				limitreader := io.LimitReader(reader.packet, reader.totalsize-reader.totalconsumed)
-				consumed, e = limitreader.Read(buff)
-			} else {
-				consumed, e = reader.packet.Read(buff)
-			}
-
-			reader.totalconsumed += int64(consumed)
-
-			if reader.totalconsumed == reader.totalsize && consumed == 0 {
+		if reader.packet.Len() > 0 && reader.totalconsumed == reader.totalsize {
+			var fflag byte
+			binary.Read(reader.packet, binary.BigEndian, &fflag)
+			if fflag == 'F' {
 				// fmt.Println("RECV consumed:", 0, "totalconsumed:", reader.totalconsumed, ",totalsize:", reader.totalsize)
 				reader.totalconsumed = 0
 				reader.totalsize = -1
 				return 0, io.EOF
-			}
-			return consumed, e
-		} else {
-			if reader.totalconsumed == reader.totalsize {
-				// fmt.Println("RECV totalconsumed:", reader.totalconsumed, ",totalsize:", reader.totalsize)
-				reader.totalconsumed = 0
-				reader.totalsize = -1
-				return 0, io.EOF
+			} else {
+				return 0, errors.New("unexpected finish flag")
 			}
 		}
+
+		n, err := reader.tcpconn.Read(buf)
+
+		if err != nil {
+			if errors.Is(err, io.EOF) {
+				reader.tcpclosed = true
+				return 0, nil
+			} else {
+				fmt.Println("err:", err)
+				return n, err
+			}
+		}
+
+		reader.packet.Write(buf[:n])
+		if reader.totalsize == -1 {
+			if reader.packet.Len() >= SIZE_LEN {
+				binary.Read(reader.packet, binary.BigEndian, &reader.totalsize)
+				// fmt.Println("totalsize ", reader.totalsize)
+			} else {
+				continue
+			}
+		}
+
+		consumed, _ := 0, error(nil)
+		if reader.totalsize-reader.totalconsumed <= int64(len(buff)) {
+			limitreader := io.LimitReader(reader.packet, reader.totalsize-reader.totalconsumed)
+			consumed, _ = limitreader.Read(buff)
+		} else {
+			consumed, _ = reader.packet.Read(buff)
+		}
+
+		reader.totalconsumed += int64(consumed)
+		//
+		// if reader.totalconsumed == reader.totalsize && consumed == 0 {
+		//         // fmt.Println("RECV consumed:", 0, "totalconsumed:", reader.totalconsumed, ",totalsize:", reader.totalsize)
+		//         reader.totalconsumed = 0
+		//         reader.totalsize = -1
+		//         return 0, e
+		// }
+		return consumed, nil
 	}
 }
 
@@ -133,8 +147,14 @@ func (conn *Conn) Receive() (reader io.Reader, err error) {
 			packet:        new(bytes.Buffer),
 			totalsize:     -1,
 			totalconsumed: 0,
+			tcpclosed:     false,
+		}
+	} else {
+		if conn.reader.tcpclosed {
+			return nil, errors.New("remote connection closed")
 		}
 	}
+
 	return conn.reader, nil
 }
 
