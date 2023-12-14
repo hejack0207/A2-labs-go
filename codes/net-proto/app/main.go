@@ -127,13 +127,6 @@ func (reader *DataReader) Read(buff []byte) (int, error) {
 		}
 
 		reader.totalconsumed += int64(consumed)
-		//
-		// if reader.totalconsumed == reader.totalsize && consumed == 0 {
-		//         // fmt.Println("RECV consumed:", 0, "totalconsumed:", reader.totalconsumed, ",totalsize:", reader.totalsize)
-		//         reader.totalconsumed = 0
-		//         reader.totalsize = -1
-		//         return 0, e
-		// }
 		return consumed, nil
 	}
 }
