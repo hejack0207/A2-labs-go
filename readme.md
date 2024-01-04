@@ -6,6 +6,7 @@
 * [docker-ce](https://github.com/docker/docker-ce)
 * [containerd](https://github.com/containerd/containerd)
 * [kata-containers](https://github.com/kata-containers/kata-containers)
+* [nvidia-container-toolkit](https://github.com/NVIDIA/nvidia-container-toolkit)
 * [docker-calico-plugin](https://github.com/projectcalico/libnetwork-plugin)
 
 # k8s plugin
