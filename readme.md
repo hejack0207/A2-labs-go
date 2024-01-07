@@ -15,6 +15,10 @@
 * [kubectl-trace](https://github.com/iovisor/kubectl-trace)
 * [ksniff](https://github.com/eldadru/ksniff)
 
+# editor
+* [vim-go](https://github.com/fatih/vim-go)
+* [vim-delve](https://github.com/sebdah/vim-delve)
+
 # tracing
 * [gotrace](https://github.com/divan/gotrace)
 
