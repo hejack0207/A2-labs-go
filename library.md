@@ -18,6 +18,9 @@
 # sniff
 * [gopcap](https://github.com/akrennmair/gopcap)
 
+# common
+* [logrus](https://github.com/sirupsen/logrus)
+
 # cli
 * [cobra](https://github.com/spf13/cobra)
 * [pflag](https://github.com/ogier/pflag)
