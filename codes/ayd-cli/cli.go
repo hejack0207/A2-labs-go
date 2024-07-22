@@ -144,6 +144,22 @@ func (r *Cli) mkDir(filepath string) (string, error){
     return resp.FileID, nil
 }
 
+func (r *Cli) search(keyword string) ([]*aliyundrive.File, error){
+    log.Debugf("keyword %s", keyword)
+    if err := r.setupDrive(); err != nil {
+        return nil, err
+    }
+    resp, err := r.ali.File.SearchFile(context.Background(), &aliyundrive.SearchFileReq{
+        DriveID:      r.driveID,
+        Query: "name match \"" + keyword + "\"",
+    })
+    if err != nil {
+        return nil, err
+    }
+
+    return resp.Items, nil
+}
+
 func (r *Cli) printFiles(files []*aliyundrive.File) {
     if len(files) == 0 {
         log.Fatalln("no file found")
@@ -151,17 +167,26 @@ func (r *Cli) printFiles(files []*aliyundrive.File) {
     }
 
     header := []string{
-        "name", "type", "size", "last modify time",
+        "id", "type", "size", "last modify time", "name",
     }
     data := [][]string{}
     for _, f := range files {
         data = append(data, []string{
-            f.Name, f.Type, fmt.Sprintf("%d",f.Size), fmt.Sprintf("%d",f.UpdatedAt),
+            f.FileID, f.Type, fmt.Sprintf("%d",f.Size), fmt.Sprintf("%s",f.UpdatedAt.Format("2006-01-02 15:04:05")), f.Name,
         })
     }
 
     table := tablewriter.NewWriter(os.Stdout)
+    // table.SetBorder(false)
     table.SetHeader(header)
+    table.SetHeaderAlignment(tablewriter.ALIGN_LEFT)
+    table.SetColumnSeparator("")
+    table.SetRowSeparator("")
+    table.SetCenterSeparator("")
+    table.SetHeaderLine(false)
+    table.SetAlignment(tablewriter.ALIGN_LEFT)
+    table.SetNoWhiteSpace(true)
+    table.SetTablePadding("\t")
     table.SetAutoWrapText(false)
     table.AppendBulk(data)
     table.Render()
