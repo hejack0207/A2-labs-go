@@ -81,6 +81,17 @@ func ayd_mkdir(targetdir string) {
     }
 }
 
+func ayd_search(name string) {
+    log.Debugf("search name: %s\n", name)
+
+    files, e:= cli.search(name)
+    if e != nil {
+        log.Fatalf("error occured when search keyword %s", name)
+        os.Exit(2)
+    }
+    cli.printFiles(files)
+}
+
 func main() {
     cmdLs := &cobra.Command{
         Use:  "l [targetdir]",
@@ -143,6 +154,15 @@ func main() {
         },
     }
 
+    cmdSearch := &cobra.Command{
+        Use:  "s keyword",
+        Short: "search file and directory whose name match keyword",
+        Args: cobra.ExactArgs(1),
+        Run: func(cmd *cobra.Command, args []string) {
+            ayd_search(args[0])
+        },
+    }
+
     rootCmd := &cobra.Command{
         PersistentPreRun: func(cmd *cobra.Command, args []string) {
             if loglevel == "i" {
@@ -156,7 +176,7 @@ func main() {
         },
     }
     rootCmd.PersistentFlags().StringVarP(&loglevel, "loglevel","V","i","log level, one of: n none, d debug, i info")
-    rootCmd.AddCommand(cmdLs, cmdUpload, cmdDownload, cmdRm, cmdMkdir)
+    rootCmd.AddCommand(cmdLs, cmdUpload, cmdDownload, cmdRm, cmdMkdir, cmdSearch)
 
     rootCmd.Execute()
 }
